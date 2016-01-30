@@ -1,6 +1,0 @@
----
-published: true
-title: It's Alive
-layout: post
----
-It's Alive
