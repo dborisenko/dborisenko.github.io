@@ -13,7 +13,7 @@ Let's invent our abstract monolithic Scala application, mostly written in messag
 
 Before starting our dive, first of all we need to define a goals.
 
-#Strategic Goals
+#Strategic Goal
 
 Our goal will be quite simple: _split the monolith application to microservices_.
 
