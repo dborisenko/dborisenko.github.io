@@ -21,7 +21,7 @@ To realise what do we need, first of all, we need to understand what is microser
 
 For our concrete Actor-based application, the typical microservice can be described by the following image:
 
-[!!!Microservice image!!!]
+![Example of Microservice Data Flow](/resources/2016-01-30-decomposition-of-monolithic-application-to-akka-cluster-microservices/microservice-data-flow.png "Example of Microservice Data Flow")
 
 ##Key Benefits of microservice architecture
 
