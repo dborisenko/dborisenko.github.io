@@ -3,7 +3,7 @@ published: true
 title: Decomposition of monolithic application to Akka Cluster microservices
 layout: post
 tags: [akka, cluster, microservice, decomposition]
-categories: [microservice, akka-cluster]
+categories: [akka-cluster-microservices]
 ---
 
 #Disclaimer
