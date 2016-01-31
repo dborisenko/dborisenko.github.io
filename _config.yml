@@ -3,6 +3,6 @@ pygments: true
 markdown: kramdown
 url: http://dborisenko.github.io
 title: Denis Borisenko
-tagline: Blog of Software Developer
-description: Hello, my name is Denis and I'm Senior software engineer. My main focus is development applications on Scala (Akka Actor model, Play Framework, Akka Cluster), engineering systems for cloud computing (Amazon AWS, Google Cloud), Reactive Systems.
+tagline: Keep cool and smile
+description: Hello, my name is Denis and I'm Senior Software Engineer. My main focus is developing applications on Scala (Akka Actor model, Play Framework, Akka Cluster), engineering systems for cloud computing (Amazon AWS, Google Cloud), Reactive Systems.
 paginate: 10
