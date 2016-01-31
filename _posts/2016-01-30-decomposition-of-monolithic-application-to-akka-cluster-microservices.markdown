@@ -21,7 +21,7 @@ Before starting our dive, first of all we need to define a goals.
 
 Our goal will be quite simple: _split the monolith application to microservices_.
 
-To realise what do we need, first of all, we need to understand what is microservice. The definition, given by Sam Newman in his book ["Building Microservices. Designing Fine-Grained Systems"](http://shop.oreilly.com/product/0636920033158.do) is microservices are small, autonomous services that work together. I also like the platform-agnostic golden rule of defining microservices: Microservice is something that could be rewritten in two weeks.
+To realise what do we need, first of all, we need to understand what is microservice. The definition, given by Sam Newman in his book ["Building Microservices. Designing Fine-Grained Systems"](http://shop.oreilly.com/product/0636920033158.do) is the following: microservices are small, autonomous services that work together. I also like the platform-agnostic golden rule of defining microservices: Microservice is something that could be rewritten in two weeks.
 
 For our concrete Actor-based application, the typical microservice can be described by the following image:
 
