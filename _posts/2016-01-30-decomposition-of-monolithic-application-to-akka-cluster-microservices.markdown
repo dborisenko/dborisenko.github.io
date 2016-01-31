@@ -89,7 +89,7 @@ The main point here is to extract the core microservice logic into the module(s)
 
 The image shows the dependencies between different microservices with the related modules.
 
-[!!!Image!!!]
+![Microservices dependencies](resources/2016-01-30-decomposition-of-monolithic-application-to-akka-cluster-microservices/microservice-dependencies.png "Microservices dependencies")
 
 #Conclusion
 
