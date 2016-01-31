@@ -40,7 +40,7 @@ To understand, that we are moving in the right direction, we need to define some
 
 ##Cross-modular versioning is important
 
-As soon as we are going to deal with multiple instances of microservices, which are going to modularized, we always need to know which version of module is running on the microservice. This might be important when we face to the problem, that after some api or model changes, some modules become incompatible with the other modules. We always need to keep in mind the version compatibilities. There are a lot of [versioning methodologies](https://en.wikipedia.org/wiki/Software_versioning), that might be useful for the concrete task.
+As soon as we are going to deal with multiple instances of microservices, which are going to be modularized, we always need to know which version of module is running on the microservice. This might be important when we face to the problem, that after some api or model changes, some modules become incompatible with the other modules. We always need to keep in mind the version compatibilities. There are a lot of [versioning methodologies](https://en.wikipedia.org/wiki/Software_versioning), that might be useful for the concrete task.
 
 ##Akka Cluster as a transport
 
