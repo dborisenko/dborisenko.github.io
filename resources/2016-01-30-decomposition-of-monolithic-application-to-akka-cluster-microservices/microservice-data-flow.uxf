@@ -22,7 +22,7 @@ Remote Instance
 
 
 bg=blue
-transparency=90</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>450</x><y>69</y><w>80</w><h>40</h></coordinates><panel_attributes>Public
+transparency=90</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>450</x><y>79</y><w>80</w><h>40</h></coordinates><panel_attributes>Public
 Messages
 bg=blue
 transparency=90</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>300</x><y>19</y><w>240</w><h>240</h></coordinates><panel_attributes>API (Gateway, Protocol)
@@ -54,8 +54,7 @@ random/
 shard-id
 balanced</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Text</id><coordinates><x>250</x><y>79</y><w>60</w><h>20</h></coordinates><panel_attributes>parent
 style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>310</x><y>79</y><w>60</w><h>20</h></coordinates><panel_attributes>child
-style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>440</x><y>89</y><w>90</w><h>130</h></coordinates><panel_attributes>lt=.
-
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>440</x><y>99</y><w>90</w><h>110</h></coordinates><panel_attributes>lt=.
 
 
 
@@ -70,7 +69,7 @@ Manager
 bg=green
 transparency=90</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>129</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=&lt;-&gt;
 m1=1
-m2=1..*</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>670</x><y>70</y><w>80</w><h>40</h></coordinates><panel_attributes>Internal
+m2=1..*</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>670</x><y>80</y><w>80</w><h>40</h></coordinates><panel_attributes>Internal
 Messages
 bg=green
 transparency=90</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>630</x><y>79</y><w>60</w><h>20</h></coordinates><panel_attributes>parent
@@ -92,4 +91,7 @@ style=wordwrap</panel_attributes><additional_attributes></additional_attributes>
 style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>560</x><y>19</y><w>530</w><h>240</h></coordinates><panel_attributes>Process (Microservice Core)
 --
 bg=orange
-transparency=98</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+transparency=98</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>860</x><y>80</y><w>80</w><h>40</h></coordinates><panel_attributes>Internal
+Messages
+bg=green
+transparency=90</panel_attributes><additional_attributes></additional_attributes></element></diagram>
