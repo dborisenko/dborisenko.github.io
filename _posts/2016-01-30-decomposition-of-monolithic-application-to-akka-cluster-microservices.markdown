@@ -50,7 +50,7 @@ As soon as we are going to deal with multiple instances of microservices, which 
 
 This practice might be against the technology-agnostic approach of designing microservices: the only supported platform is JVM and mostly common used language is Scala. But let's make this choice because of _asynchronous message-driven style of collaboration_, implemented in Akka and extended to Akka Cluster. This style is also good to follow in the concrete module implementation. It can help to build [reactive](http://www.reactivemanifesto.org/), distributed and highly scalable application. Of course, there are a lot of other choices: request/response synchronous and asynchronous RPC (SOAP, Thrift, Protocol Buffers) or also request/response based REST (over HTTP). But in this article we are going to stay only on Akka and Akka Cluser message based approach.
 
-##Solutions preferences
+##Solution preferences
 
 Let's define some list of priorities, which approach is most preferable. The key principle here will be to choose the most flexible and scalable solution for a specific tasks.
 
