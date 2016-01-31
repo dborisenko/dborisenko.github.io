@@ -5,7 +5,7 @@ layout: post
 tags: [akka, cluster, microservice, decomposition]
 categories: [microservice, akka-cluster]
 ---
-By this post I would like to start series of articles about designing and implementing microservices on top of Akka Cluster. All the following is my personal thought, based on my experience. These records are attempt to systematize my knoledge and experience on a specific domain. I'm writing them mostly for myself to keep something in mind and avoid some issues in a future.
+By this post I would like to start series of articles about designing and implementing microservices on top of Akka Cluster. All the following is my personal thought, based on my experience. These records are attempt to systematize my knowledge and experience on a specific domain. I'm writing them mostly for myself to keep something in mind and avoid some issues in a future.
 
 #The Monolith
 
