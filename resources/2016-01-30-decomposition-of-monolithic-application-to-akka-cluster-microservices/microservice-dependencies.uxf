@@ -1,0 +1,135 @@
+<diagram program="umletino" version="14.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>450</x><y>79</y><w>170</w><h>130</h></coordinates><panel_attributes>*Service A*
+cluster role: &lt;&lt;service-a&gt;&gt;
+{innerclass
+common-model
+innerclass}
+{innerclass
+service-a-api
+innerclass}
+{innerclass
+service-a-model
+innerclass}
+{innerclass
+service-a-core
+innerclass}
+bg=blue
+transparency=95
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>79</y><w>170</w><h>130</h></coordinates><panel_attributes>*Service B*
+cluster role: &lt;&lt;service-b&gt;&gt;
+{innerclass
+common-model
+innerclass}
+{innerclass
+service-b-api
+innerclass}
+{innerclass
+service-b-model
+innerclass}
+{innerclass
+service-b-core
+innerclass}
+bg=green
+transparency=95</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>329</y><w>170</w><h>180</h></coordinates><panel_attributes>*Service C*
+cluster role: &lt;&lt;service-c&gt;&gt;
+{innerclass
+service-a-api
+innerclass}
+{innerclass
+service-b-api
+innerclass}
+{innerclass
+service-c-model
+innerclass}
+{innerclass
+service-c-core
+innerclass}
+{innerclass
+service-c-api
+innerclass}
+{innerclass
+service-d-api
+innerclass}
+bg=red
+transparency=95</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>329</y><w>170</w><h>180</h></coordinates><panel_attributes>*Service D*
+cluster role: &lt;&lt;service-d&gt;&gt;
+{innerclass
+service-c-model
+innerclass}
+{innerclass
+service-d-api
+innerclass}
+{innerclass
+service-d-core
+innerclass}
+{innerclass
+service-d-model
+innerclass}
+bg=magenta
+transparency=95</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>460</x><y>239</y><w>60</w><h>40</h></coordinates><panel_attributes>Cache</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>550</x><y>240</y><w>60</w><h>40</h></coordinates><panel_attributes>valign=center
+halign=center
+
+DB
+customelement=
+// Text Elemnt
+// DB Symbol
+drawArc(0,0,width,height*2/5,0,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+drawArc(0,0,width,height*2/5,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawRectangle(0,(height+0.5)/5,width,(height-1.5)*3/5) lw=0.1 bg=#222222 //Parameters (x, y, width, height)
+drawLine(0,height/5,0,height*4/5)fg=black //Parameters (x1, y1, x2, y2) 
+drawLine(width,height/5,width,height*4/5)fg=black //Parameters (x1, y1, x2, y2) 
+drawArc(0,height*3/5,width,height*2/5,180,180,true)fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>200</y><w>60</w><h>60</h></coordinates><panel_attributes>lt=&lt;-&gt;</panel_attributes><additional_attributes>40;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>200</y><w>70</w><h>60</h></coordinates><panel_attributes>lt=&lt;-&gt;</panel_attributes><additional_attributes>10;40;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>200</y><w>70</w><h>60</h></coordinates><panel_attributes>lt=&lt;-&gt;</panel_attributes><additional_attributes>10;40;50;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>760</x><y>239</y><w>60</w><h>40</h></coordinates><panel_attributes>Cache</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>200</y><w>70</w><h>60</h></coordinates><panel_attributes>lt=&lt;-&gt;</panel_attributes><additional_attributes>50;40;10;10</additional_attributes></element><element><id>Text</id><coordinates><x>850</x><y>240</y><w>60</w><h>40</h></coordinates><panel_attributes>valign=center
+halign=center
+
+DB
+customelement=
+// Text Elemnt
+// DB Symbol
+drawArc(0,0,width,height*2/5,0,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+drawArc(0,0,width,height*2/5,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawRectangle(0,(height+0.5)/5,width,(height-1.5)*3/5) lw=0.1 bg=#222222 //Parameters (x, y, width, height)
+drawLine(0,height/5,0,height*4/5)fg=black //Parameters (x1, y1, x2, y2) 
+drawLine(width,height/5,width,height*4/5)fg=black //Parameters (x1, y1, x2, y2) 
+drawArc(0,height*3/5,width,height*2/5,180,180,true)fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>140</y><w>180</w><h>280</h></coordinates><panel_attributes>lt=&lt;-&gt;</panel_attributes><additional_attributes>10;260;90;260;90;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>140</y><w>80</w><h>250</h></coordinates><panel_attributes>lt=&lt;-&gt;</panel_attributes><additional_attributes>10;10;60;10;60;230;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>390</y><w>180</w><h>120</h></coordinates><panel_attributes>lt=&lt;-&gt;</panel_attributes><additional_attributes>10;100;110;100;110;10;160;10</additional_attributes></element><element><id>Text</id><coordinates><x>500</x><y>540</y><w>60</w><h>40</h></coordinates><panel_attributes>valign=center
+halign=center
+
+Journal
+customelement=
+// Text Elemnt
+// DB Symbol
+drawArc(0,0,width,height*2/5,0,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+drawArc(0,0,width,height*2/5,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawRectangle(0,(height+0.5)/5,width,(height-1.5)*3/5) lw=0.1 bg=#222222 //Parameters (x, y, width, height)
+drawLine(0,height/5,0,height*4/5)fg=black //Parameters (x1, y1, x2, y2) 
+drawLine(width,height/5,width,height*4/5)fg=black //Parameters (x1, y1, x2, y2) 
+drawArc(0,height*3/5,width,height*2/5,180,180,true)fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>500</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;-&gt;</panel_attributes><additional_attributes>10;40;10;13</additional_attributes></element><element><id>Text</id><coordinates><x>810</x><y>540</y><w>60</w><h>40</h></coordinates><panel_attributes>valign=center
+halign=center
+
+DB
+customelement=
+// Text Elemnt
+// DB Symbol
+drawArc(0,0,width,height*2/5,0,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+drawArc(0,0,width,height*2/5,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
+drawRectangle(0,(height+0.5)/5,width,(height-1.5)*3/5) lw=0.1 bg=#222222 //Parameters (x, y, width, height)
+drawLine(0,height/5,0,height*4/5)fg=black //Parameters (x1, y1, x2, y2) 
+drawLine(width,height/5,width,height*4/5)fg=black //Parameters (x1, y1, x2, y2) 
+drawArc(0,height*3/5,width,height*2/5,180,180,true)fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>500</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>259</y><w>170</w><h>70</h></coordinates><panel_attributes>*API*
+(not in a cluster)
+{innerclass
+service-c-api
+innerclass}
+bg=cyan
+transparency=95</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>290</y><w>170</w><h>190</h></coordinates><panel_attributes>lt=&lt;-&gt;
+</panel_attributes><additional_attributes>10;10;110;10;110;170;150;170</additional_attributes></element><element><id>UMLState</id><coordinates><x>410</x><y>50</y><w>530</w><h>560</h></coordinates><panel_attributes>Cluster
+valign=top
+lt=.
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>50</y><w>200</w><h>170</h></coordinates><panel_attributes></panel_attributes><additional_attributes>180;30;180;20;10;20;10;150;20;150</additional_attributes></element><element><id>Text</id><coordinates><x>330</x><y>300</y><w>90</w><h>40</h></coordinates><panel_attributes>Access via Cluster Client
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>40</y><w>200</w><h>170</h></coordinates><panel_attributes></panel_attributes><additional_attributes>180;30;180;20;10;20;10;150;20;150</additional_attributes></element><element><id>Relation</id><coordinates><x>730</x><y>50</y><w>200</w><h>170</h></coordinates><panel_attributes></panel_attributes><additional_attributes>180;30;180;20;10;20;10;150;20;150</additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>300</y><w>200</w><h>220</h></coordinates><panel_attributes></panel_attributes><additional_attributes>180;30;180;20;10;20;10;200;20;200</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>290</y><w>200</w><h>220</h></coordinates><panel_attributes></panel_attributes><additional_attributes>180;30;180;20;10;20;10;200;20;200</additional_attributes></element><element><id>Relation</id><coordinates><x>730</x><y>300</y><w>200</w><h>220</h></coordinates><panel_attributes></panel_attributes><additional_attributes>180;30;180;20;10;20;10;200;20;200</additional_attributes></element></diagram>
