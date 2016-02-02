@@ -81,15 +81,15 @@ Interface to the corcrete microservice. Should contain enough information to mak
 
 ### Gateway
 
-Module contains only information, which is enough to make microservice lookup and discovery (service topology data). It doesn't contain public messages and their serializers. They should be stored in [Model](#Model). In this case [Core](#Core) shouldn't have this module in the dependencies.
+Module contains only information, which is enough to make microservice lookup and discovery (service topology data). It doesn't contain public messages and their serializers. They should be stored in [Model](#model). In this case [Core](#Core) shouldn't have this module in the dependencies.
 
 ### Protocol
 
-Module contains information, which is enough to make microservice lookup and discovery (service topology data). It also contains public messages and their serializers, etc. In this case [Core](#Core) should be dependent on this module.
+Module contains information, which is enough to make microservice lookup and discovery (service topology data). It also contains public messages and their serializers, etc. In this case [Core](#core) should be dependent on this module.
 
 ## Core
 
-Main microservice logic. Depends on the [Model](#Model) and for some concrete implementations on the [API](#API) modules. Should be able to handle public messages. Internal messages shoulnd't be exposed
+Main microservice logic. Depends on the [Model](#model) and for some concrete implementations on the [API](#api) modules. Should be able to handle public messages. Internal messages shoulnd't be exposed
 
 The figure, which show the dependencies between different microservices with the related modules.
 
