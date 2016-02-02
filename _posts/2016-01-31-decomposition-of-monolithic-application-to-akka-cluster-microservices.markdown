@@ -77,7 +77,7 @@ Models, shared between microservices. So, it might contain following components:
 
 ## API
 
-Interface to the corcrete microservice. Should contain enough information to make microservice lookup and discovery. Regarding storing public messages, there are 2 possible implementations:
+Interface to the corcrete microservice. Should contain enough information to make microservice lookup and discovery. All clients of this microservice should include this module as a dependency. Regarding storing public messages, there are 2 possible implementations:
 
 ### Gateway
 
