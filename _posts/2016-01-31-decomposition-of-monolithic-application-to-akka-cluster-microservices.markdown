@@ -61,9 +61,13 @@ In order to have API decoupled from the process module, we need to keep internal
 
 First of all, we need to understand, how we need to split the monolith application into the modules. What strategy need to be applied to keep them loosely coupled and highly cohesive? We, of course, need some shared util and runtime libraries. But more shared components we have, more highly coupled application we will get at the end point. So, let's try to find a golden balance for our concrete task and try to keep the dependency list as small as possible. 
 
-The main point here is to extract the core microservice logic into the module(s) and keep the monolith application working properly and all unit tests passed successfully. They might be extracted on the following categories with their responsibilities.
+We need to extract the core microservice logic into the module(s) and keep the monolith application working properly and all unit tests passed successfully.
 
-## Shared model
+In my opinion, the best solution will be building a microservice based on the following SBT modules:
+
+## Model
+
+Models, shared between microservices. So, it might contain following components:
 
 * Model classes and their companion objects.
 * Constants.
@@ -71,19 +75,23 @@ The main point here is to extract the core microservice logic into the module(s)
 * Utils. Unfortunately, some companion objects (for example, parsers or _apply()_ methods) requires some util components.
 * Unit tests. We need to make sure, that serialization/deserialization or utils work fine.
 
-## API (Gateway, Protocol)
+## API
 
-* Public messages.
-* Gateway proxy factories, knowing microservice topology to be able to discover the  service. I will topic of microservice discovery one of in the next articles.
-* Serialization/deserialization, formats of public messages.
+Interface to the corcrete microservice. Should contain enough information to make microservice lookup and discovery. Regarding storing public messages, there are 2 possible implementations:
 
-## Process (microservice core)
+### Gateway
 
-* Internal messages.
-* Actors, processors, the main logic of a microservice.
-* Dependency injection modules.
+Module contains only information, which is enough to make microservice lookup and discovery (service topology data). It doesn't contain public messages and their serializers. They should be stored in [Model](#Model). In this case [Core](#Core) shouldn't have this module in the dependencies.
 
-The image shows the dependencies between different microservices with the related modules.
+### Protocol
+
+Module contains information, which is enough to make microservice lookup and discovery (service topology data). It also contains public messages and their serializers, etc. In this case [Core](#Core) should be dependent on this module.
+
+## Core
+
+Main microservice logic. Depends on the [Model](#Model) and for some concrete implementations on the [API](#API) modules. Should be able to handle public messages. Internal messages shoulnd't be exposed
+
+The figure, which show the dependencies between different microservices with the related modules.
 
 ![Microservices dependencies](/resources/2016-01-31-decomposition-of-monolithic-application-to-akka-cluster-microservices/microservice-dependencies.png "Microservices dependencies")
 
