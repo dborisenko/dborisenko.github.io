@@ -74,7 +74,7 @@ The main point here is to extract the core microservice logic into the module(s)
 ## API (Gateway, Protocol)
 
 * Public messages.
-* Gateway proxy factories, knowing microservice topology to be able to discover the  service. I will cover this topic in the next article.
+* Gateway proxy factories, knowing microservice topology to be able to discover the  service. I will topic of microservice discovery one of in the next articles.
 * Serialization/deserialization, formats of public messages.
 
 ## Process (microservice core)
@@ -89,4 +89,4 @@ The image shows the dependencies between different microservices with the relate
 
 # Conclusion
 
-In this article I tried to cover the first round of decomposition of the monolithic application into the microservices. Of course, it's only beginning of the big journey and probably some other decompositions will be required. In the next article I try to cover question of obtaining the microservice topology (for example, for the gateways).
+In this article I tried to cover the first round of decomposition of the monolithic application into the microservices. Of course, it's only beginning of the big journey and probably some other decompositions will be required. In the next articles I'll try to cover questions of different Akka Cluster topologies and some methods of microservices discovery.
