@@ -81,7 +81,7 @@ Interface to the corcrete microservice. Should contain enough information to mak
 
 ### Gateway
 
-Module contains only information, which is enough to make microservice lookup and discovery (service topology data). It doesn't contain public messages and their serializers. They should be stored in [Model](#model). In this case [Core](#Core) shouldn't have this module in the dependencies.
+Module contains only information, which is enough to make microservice lookup and discovery (service topology data). It doesn't contain public messages and their serializers. They should be stored in [Model](#model). In this case [Core](#core) shouldn't have this module in the dependencies.
 
 ### Protocol
 
