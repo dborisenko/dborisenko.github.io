@@ -55,7 +55,7 @@ Let's define some list of priorities, which approach is most preferable. The key
 
 ## Separate public messages and API from internal ones
 
-In order to have API decoupled from the process module, we need to keep internal messages and API independent from external, even if the functionality is duplicated. Internal messages might be changed quit often and API messages shouldn't reflect this changes. API need be backward compatible as long as possible.
+In order to have API decoupled from the process module, we need to keep internal messages and API independent from external, even if the functionality is duplicated. Internal messages might be changed quite often and API messages shouldn't reflect this changes. API need be backward compatible as long as possible.
 
 # Decomposition
 
