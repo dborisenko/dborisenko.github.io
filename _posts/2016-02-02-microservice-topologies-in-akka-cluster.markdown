@@ -5,7 +5,7 @@ layout: post
 tags: [akka, cluster, microservice, topology, direct, cluster-singleton, cluster-sharding, cluster-router-group]
 categories: [akka-cluster-microservices]
 ---
-Service discovery is an essential aspect for microservice architecture. Does usage of a Akka Cluster simplify this problem for us? To answer this question, first of all we need to analyse data flows within a cluster and how different elements (service nodes or clients) of a microservice can be arranged inside a cluster. Let's call this arrangement topology.
+Service discovery is an essential aspect for microservice architecture. Does usage of a Akka Cluster simplify this problem for us? To answer this question, first of all we need to analyse data flows within a cluster and understand how different elements (service nodes or clients) of a microservice can be arranged inside a cluster. Let's call this arrangement topology.
 
 _Microservice topology is the arrangement of the various elements of a cluster_
 
@@ -22,3 +22,7 @@ Every _Actor_ in a cluster has a path, which includes it's network address. And 
 # Cluster Sharding Topology
 
 # Cluster Router Group Topology
+
+# Other topologies
+
+The list of the topologies is of course not complete. There might be other different variations, like as message queue based topology (ZMQ, NSQ).
