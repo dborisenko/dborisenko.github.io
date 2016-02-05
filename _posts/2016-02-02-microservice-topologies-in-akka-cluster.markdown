@@ -23,6 +23,6 @@ Every _Actor_ in a cluster has a path, which includes it's network address. And 
 
 # Cluster Router Group Topology
 
-# Other topologies
+# Other Topologies
 
 The list of the topologies is of course not complete. There might be other different variations, like as message queue based topology (ZMQ, NSQ).
