@@ -13,7 +13,7 @@ Let's describe some of the possible microservice topologies within an Akka Clust
 
 # Direct topology
 
-Every _Actor_ in a cluster has a path, which includes it's network address. And this path is a part of serializable _ActorRef_ value. In this way you can have an actor, running on any machine and knowing it's reference _ActorRef_ is enough to send message directly to that actor from any other machine. Let's call this topology _direct_ and illustrate it by the following figure:
+Every _Actor_ in a cluster has a path, which includes it's network address. And this path is a part of serializable _ActorRef_ value. In this way you can have an actor, running on any machine and knowing it's reference _ActorRef_ is enough to send message directly to that actor from any other machine. Let's call this topology _direct_.
 
 # Cluster Singleton Topology
 
