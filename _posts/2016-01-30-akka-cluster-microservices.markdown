@@ -9,6 +9,6 @@ By this post I would like to start series of articles about designing and implem
 
 * Part 1. [Decomposition of monolithic application to Akka Cluster microservices]({% post_url 2016-01-31-decomposition-of-monolithic-application-to-akka-cluster-microservices %}).
 * Part 2. [Microservice Topologies in Akka Cluster]({% post_url 2016-02-02-microservice-topologies-in-akka-cluster %}).
-* Part 3. Static Microservice Discovery.
+* Part 3. [Static Microservice Discovery]({% post_url 2016-02-07-static-microservice-discovery %}).
 * Part 4. Service Registry
 * Part 5. Dinamic Microservice Discovery.
