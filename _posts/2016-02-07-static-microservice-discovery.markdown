@@ -47,7 +47,7 @@ As we can see from the code above, _FooDescriptor_ contains full information, re
 
 As soon as core module has api module as a dependency, we can use information from _FooDescriptor_ to assemble our own singleton.
 
-{% highlight scala %}
+```scala
 object FooManagerFactory {
   def managerProps(settings: ClusterSingletonManagerSettings): Props = ClusterSingletonManager.props(
     singletonProps = Props(injected[FooActor]),
@@ -64,7 +64,7 @@ object FooManagerFactory {
 
   def createProxy(actorSystem: ActorSystem): ActorRef = createProxy(actorSystem, actorSystem)
 }
-{% endhighlight %}
+```
 
 # Conclusion
 
