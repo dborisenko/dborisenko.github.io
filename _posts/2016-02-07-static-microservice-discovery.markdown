@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Static Microservice Discovery
 layout: post
 tags: [akka, cluster, microservice, topology, discovery]
