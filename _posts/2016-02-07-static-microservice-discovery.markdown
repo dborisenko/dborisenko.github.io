@@ -66,9 +66,9 @@ object FooManagerFactory {
 }
 {% endhighlight %}
 
-# Pros and Cons of Static Discovery
+# Conclusion
 
-Let's have a look on pros and cons of a static discovery
+Let's have a look on pros and cons of a static discovery method.
 
 ## Pros: Simplicity
 
