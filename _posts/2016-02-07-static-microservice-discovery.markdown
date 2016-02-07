@@ -15,7 +15,7 @@ As we agreed in the [post about decomposition into the modules]({% post_url 2016
 
 ## Singleton Service API Module
 
-{% highlight scala %}
+```scala
 object FooDescriptor {
   val SingletonManagerName = "fooManager"
   val SingletonManagerPath = s"user/$SingletonManagerName"
@@ -39,7 +39,7 @@ object FooProxyFactory {
 
   def createProxy(actorSystem: ActorSystem, name: String = ProxyActorName): ActorRef = createProxy(actorSystem, actorSystem, name)
 }
-{% endhighlight %}
+```
 
 As we can see from the code above, _FooDescriptor_ contains full information, required by creating proxy actor for access to the Foo Singleton.
 
