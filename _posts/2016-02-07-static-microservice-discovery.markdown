@@ -65,3 +65,19 @@ object FooManagerFactory {
   def createProxy(actorSystem: ActorSystem): ActorRef = createProxy(actorSystem, actorSystem)
 }
 {% endhighlight %}
+
+# Pros and Cons of Static Discovery
+
+Let's have a look on pros and cons of a static discovery
+
+## Pros: Simplicity
+
+This method of dicscovery is very simple. We don't need to have complicated systems to deliver the topology to the end-client.
+
+## Cons: No dynamic update on topology change
+
+When we need to update service topology (for example, we rewrote service from Cluster Singleton topology to a Cluster Sharding topology), we need to change and recompile _service-api_ module. That mean, that we need to recompile and redeploy all the client services. This might be an issue, when there are a lot of clients of this concrete service and can easily lead to the redeployment of the whole cluster. Thus, using this method we can neutralize the benefits of using microservices.
+
+## Cons: No way to track all running services
+
+Unless we use service registry (we discuss this topic later), there is no way to control and track all running services.
