@@ -21,6 +21,8 @@ $ cd scala-aws-lambda/
 Add the following to your `project/plugins.sbt` file:
 
 ```scala
+resolvers += "JBoss" at "https://repository.jboss.org/"
+
 addSbtPlugin("com.gilt.sbt" % "sbt-aws-lambda" % "0.4.2")
 ```
 
