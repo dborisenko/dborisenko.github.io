@@ -40,7 +40,7 @@ resolvers += "JBoss" at "https://repository.jboss.org/"
 addSbtPlugin("com.gilt.sbt" % "sbt-aws-lambda" % "0.4.2")
 ```
 
-Add the `AwsLambdaPlugin` auto-plugin and s3-bucket name (the actual lambda binary will be stored there) to your `build.sbt`:
+Add the `AwsLambdaPlugin` auto-plugin and s3-bucket name (the actual lambda binary will be stored there) to your `build.sbt`. We also need additional library dependencies to be able to handle lambda input (`aws-lambda-java-core`).
 
 ```scala
 enablePlugins(AwsLambdaPlugin)
@@ -48,6 +48,8 @@ enablePlugins(AwsLambdaPlugin)
 retrieveManaged := true
 
 s3Bucket := Some("scala-aws-lambda")
+
+libraryDependencies += "com.amazonaws" % "aws-lambda-java-core" % "1.1.0"
 ```
 
 To create new lambda you need to run the following command:
@@ -61,10 +63,16 @@ AWS_ACCESS_KEY_ID=<YOUR_KEY_ID> AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_KEY> sbt upda
 
 # Post method
 
-First of all, we need to specify which actualy handlers we are going to use. For that we need to update `build.sbt` file.
+First of all, we need to specify which actualy handlers we are going to use. Also we need to use one of the json parser. Let's use `circe`. For all of that we need to update `build.sbt` file.
 
 ```scala
 lambdaHandlers += "post" -> "com.dbrsn.lambda.Main::post"
+
+libraryDependencies ++= Seq(
+  "io.circe" %% "circe-generic",
+  "io.circe" %% "circe-parser",
+  "io.circe" %% "circe-java8"
+) map (_ % "0.8.0")
 ```
 
 # Articles
