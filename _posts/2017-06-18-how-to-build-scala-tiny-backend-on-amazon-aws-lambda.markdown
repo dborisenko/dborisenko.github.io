@@ -49,6 +49,10 @@ retrieveManaged := true
 
 s3Bucket := Some("scala-aws-lambda")
 
+awsLambdaMemory := Some(192)
+
+awsLambdaTimeout := Some(30)
+
 libraryDependencies += "com.amazonaws" % "aws-lambda-java-core" % "1.1.0"
 ```
 
@@ -123,10 +127,10 @@ object PersistedOrder {
 }
 ```
 
-Finally, Main object itself
+Finally, Main class itself:
 
 ```scala
-object Main {
+class Main {
   // Initializing DynamoDB client
   lazy val client: AmazonDynamoDB = AmazonDynamoDBClientBuilder.standard().withRegion(Regions.US_EAST_1).build()
   lazy val dynamoDb: DynamoDB = new DynamoDB(client)
@@ -159,7 +163,10 @@ object Main {
     }
 
     // Throw exception if it happened or write output order in json format otherwise
-    persisted.map(_.asJson).fold(throw _, json => IOUtils.write(json.noSpaces, output, encoding))
+    persisted.map(_.asJson).fold(throw _, json => {
+      IOUtils.write(json.noSpaces, output, encoding)
+      output.flush()
+    })
   }
 
 }
@@ -172,6 +179,9 @@ AWS_ACCESS_KEY_ID=<YOUR_KEY_ID> AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_KEY> sbt crea
 
 You can visit aws console and find your lambda there
 ![Post lambda available](/resources/2017-06-18-how-to-build-scala-tiny-backend-on-amazon-aws-lambda/Screen-Shot-2017-06-19-at-20.55.11.png "Post lambda available")
+
+## API Gateway for post method
+
 
 # Articles
 * [Writing AWS Lambda Functions in Scala](https://aws.amazon.com/blogs/compute/writing-aws-lambda-functions-in-scala/)
