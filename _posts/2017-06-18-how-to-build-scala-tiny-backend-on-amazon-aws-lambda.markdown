@@ -214,7 +214,7 @@ We created our new shiny lambda function. But it doesn't have any API to connect
 
 # Summary
 
-In this article we created a simple project which allows us to build lambda functions in Scala with automated sbt deployment. We also learnt how to put data to Amazon DynamoDB. And it's easy and powerfull.
+In this article we created a simple project which allows us to build lambda functions in Scala with automated sbt deployment. We also learnt how to put data to Amazon DynamoDB. And it's easy and powerfull. The source code of this project you can find in my [github](https://github.com/dborisenko/scala-aws-lambda-dynamodb).
 
 # Articles
 * [Writing AWS Lambda Functions in Scala](https://aws.amazon.com/blogs/compute/writing-aws-lambda-functions-in-scala/)
