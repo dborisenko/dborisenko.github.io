@@ -178,6 +178,7 @@ AWS_ACCESS_KEY_ID=<YOUR_KEY_ID> AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_KEY> sbt crea
 ```
 
 You can visit aws console and find your lambda there
+
 ![Post lambda available](/resources/2017-06-18-how-to-build-scala-tiny-backend-on-amazon-aws-lambda/Screen-Shot-2017-06-19-at-20.55.11.png "Post lambda available")
 
 Let's try to test it. Go to post function and click test button. We can use following example as an input:
@@ -192,12 +193,18 @@ Let's try to test it. Go to post function and click test button. We can use foll
 }
 ```
 And now we see an error
+
 ![DynamoDB authorization error](/resources/2017-06-18-how-to-build-scala-tiny-backend-on-amazon-aws-lambda/Screen-Shot-2017-06-19-at-22.49.16.png "DynamoDB authorization error")
 
 This mean, that our User is not authorized to perform put item action into DynamoDB. Let's authorize him. We need to go to our IAM management console and in the [Roles section](https://console.aws.amazon.com/iam/home?#/roles) select our role (by default, it's `lambda_basic_execution`), click `Attach Policy` button in a `Permissions` section and attach policy `AmazonDynamoDBFullAccess`. Otherwise, you can goo to DynamoDB config and in a tab "Access control" create policy for our user to allow our user to perform action `PutItem`. 
 
 That's all. Now we can try to test it one more time and happily enjoy the following result:
+
 ![Post method works](/resources/2017-06-18-how-to-build-scala-tiny-backend-on-amazon-aws-lambda/Screen-Shot-2017-06-19-at-23.04.38.png "Post method works")
+
+We can also see that our DynamoDB database is actually updated:
+
+![DynamoDB items](/resources/2017-06-18-how-to-build-scala-tiny-backend-on-amazon-aws-lambda/Screen-Shot-2017-06-19-at-23.09.27.png "DynamoDB items")
 
 ## API Gateway for post method
 
