@@ -49,7 +49,7 @@ retrieveManaged := true
 
 s3Bucket := Some("scala-aws-lambda")
 
-awsLambdaMemory := Some(192)
+awsLambdaMemory := Some(320)
 
 awsLambdaTimeout := Some(30)
 
@@ -208,6 +208,7 @@ We can also see that our DynamoDB database is actually updated:
 
 ## API Gateway for post method
 
+We created our new shiny lambda function. But it doesn't have any API to connect it to the external world. Let's fix it. Let's go to Amazon AWS API Gateway and create new API method POST. Here you need to specify your concrete lambda method and test it. Surprisely, it works.
 
 # Articles
 * [Writing AWS Lambda Functions in Scala](https://aws.amazon.com/blogs/compute/writing-aws-lambda-functions-in-scala/)
