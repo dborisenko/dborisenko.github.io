@@ -165,6 +165,13 @@ object Main {
 }
 ```
 
+And now after running the following command and answering access question, your lambda will be deployed
+```
+AWS_ACCESS_KEY_ID=<YOUR_KEY_ID> AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_KEY> sbt createLambda
+```
+
+You can visit aws console and find your lambda there
+![Post lambda available](/resources/2017-06-18-how-to-build-scala-tiny-backend-on-amazon-aws-lambda/Screen-Shot-2017-06-19-at-20.55.11.png "Post lambda available")
 
 # Articles
 * [Writing AWS Lambda Functions in Scala](https://aws.amazon.com/blogs/compute/writing-aws-lambda-functions-in-scala/)
