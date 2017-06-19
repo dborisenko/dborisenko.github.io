@@ -196,7 +196,8 @@ And now we see an error
 
 This mean, that our User is not authorized to perform put item action into DynamoDB. Let's authorize him. We need to go to our IAM management console and in the [Roles section](https://console.aws.amazon.com/iam/home?#/roles) select our role (by default, it's `lambda_basic_execution`), click `Attach Policy` button in a `Permissions` section and attach policy `AmazonDynamoDBFullAccess`. Otherwise, you can goo to DynamoDB config and in a tab "Access control" create policy for our user to allow our user to perform action `PutItem`. 
 
-That's all. Now we can try to test it one more time and see the following result:
+That's all. Now we can try to test it one more time and happily enjoy the following result:
+![Post method works](/resources/2017-06-18-how-to-build-scala-tiny-backend-on-amazon-aws-lambda/Screen-Shot-2017-06-19-at-23.04.38.png "Post method works")
 
 ## API Gateway for post method
 
