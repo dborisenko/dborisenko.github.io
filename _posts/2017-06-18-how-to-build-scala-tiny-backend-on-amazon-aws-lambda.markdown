@@ -1,8 +1,8 @@
 ---
-published: false
+published: true
 title: How to build Scala tiny backend on Amazon AWS Lambda
 layout: post
-tags: [scala, aws, lambda]
+tags: [scala, aws, lambda, dynamodb, scala]
 categories: [scala-aws-lambda]
 ---
 
@@ -65,7 +65,7 @@ To update your lambda you need to run this command:
 AWS_ACCESS_KEY_ID=<YOUR_KEY_ID> AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_KEY> sbt updateLambda
 ```
 
-# Post method
+# Post method implementation
 
 First of all, we need to specify which actualy handlers we are going to use. Also we need to use one of the json parser. Let's use `circe`. For all of that we need to update `build.sbt` file.
 
@@ -172,6 +172,8 @@ class Main {
 }
 ```
 
+# Deploy
+
 And now after running the following command and answering access question, your lambda will be deployed
 ```
 AWS_ACCESS_KEY_ID=<YOUR_KEY_ID> AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_KEY> sbt createLambda
@@ -206,9 +208,13 @@ We can also see that our DynamoDB database is actually updated:
 
 ![DynamoDB items](/resources/2017-06-18-how-to-build-scala-tiny-backend-on-amazon-aws-lambda/Screen-Shot-2017-06-19-at-23.09.27.png "DynamoDB items")
 
-## API Gateway for post method
+# API Gateway for post method
 
 We created our new shiny lambda function. But it doesn't have any API to connect it to the external world. Let's fix it. Let's go to Amazon AWS API Gateway and create new API method POST. Here you need to specify your concrete lambda method and test it. Surprisely, it works.
+
+# Summary
+
+In this article we created a simple project which allows us to build lambda functions in Scala with automated sbt deployment. We also learnt how to put data to Amazon DynamoDB. And it's easy and powerfull.
 
 # Articles
 * [Writing AWS Lambda Functions in Scala](https://aws.amazon.com/blogs/compute/writing-aws-lambda-functions-in-scala/)
