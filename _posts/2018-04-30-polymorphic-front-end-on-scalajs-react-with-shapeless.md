@@ -26,8 +26,11 @@ In this code I use shapeless `Poly1` to make polymorphism for my platform and de
 So, the idea is _to create multiple atomic and small controls for each platform and complex composite screens where we just specify what type of contols we would like to combine and on compile time we assemble absolutely polymorphic view_. The composite screen might look like this:
 
 ```scala
-type CasePlatform[PolyView, Platform, Props] = Case.Aux[PolyView, Platform :: HNil, Props => VdomElement]
+import japgolly.scalajs.react.ScalaComponent
+import japgolly.scalajs.react.vdom.html_<^._
+import shapeless.Poly1
 
+type CasePlatform[PolyView, Platform, Props] = Case.Aux[PolyView, Platform :: HNil, Props => VdomElement]
 
 object ItemComponent extends Poly1 {
   private def component[Platform](
