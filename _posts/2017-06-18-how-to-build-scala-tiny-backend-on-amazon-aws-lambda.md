@@ -1,10 +1,7 @@
 ---
 layout: post
 title: How to build Scala tiny backend on Amazon AWS Lambda
-
-published: true
 tags: [scala, aws, lambda, dynamodb, scala]
-categories: [scala-aws-lambda]
 ---
 
 We are going to create a simple application, which posts and gets provided to lambda set of numbers.
