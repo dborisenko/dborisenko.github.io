@@ -3,7 +3,7 @@ layout: post
 title: Decomposition of monolithic application to Akka Cluster microservices
 tags: [akka, cluster, microservice, decomposition]
 ---
-In the first part of [series of articles about Akka Cluster Microservices](2016-01-30-akka-cluster-microservices), I would like to cover question of decomposition of a monolithic application. First of all, we need to understand what is monolithic application and what are micriservices. Also we need to define a goal and principles and practices to achieve this goal. So, let's start.
+In the first part of [series of articles about Akka Cluster Microservices](/2016-01-30-akka-cluster-microservices), I would like to cover question of decomposition of a monolithic application. First of all, we need to understand what is monolithic application and what are micriservices. Also we need to define a goal and principles and practices to achieve this goal. So, let's start.
 
 # The Monolith
 
