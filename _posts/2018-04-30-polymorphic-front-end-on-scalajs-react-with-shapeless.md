@@ -46,7 +46,7 @@ object ItemComponent extends Poly1 {
           content.user.data.avatar, content.user.data.username, content.createdAt
         )),
         content = ContentControl(platform).apply(content.id),
-        footer = FooterControl(platform).apply(FooterControl.Props(content.likes, content.exchangeRequests))
+        footer = FooterControl(platform).apply(FooterControl.Props(content.likes))
       ))
   }.build
 
