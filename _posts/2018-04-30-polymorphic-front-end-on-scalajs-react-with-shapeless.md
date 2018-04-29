@@ -21,7 +21,7 @@ object ContentControl extends Poly1 {
 }
 ```
 
-In this code I use shapeless `Poly1` to make polymorphism for my platform and depending on case (the only implemented part here is `SemanticUiWebDom`, which is [Semantic UI](https://semantic-ui.com/) web platform, rendered to DOM directly) decides which component it can render and return it respectively. 
+In this code I use shapeless `Poly1` to make polymorphism for my platform and depending on case decides which component it can render and return it respectively. In this exmaple we use `SemanticUiWebDom` as a platform definition, which is [Semantic UI](https://semantic-ui.com/) web platform, rendered to DOM directly. For this platform we can easily return HTML tags with type `VdomElement`. But for react-native it will be `Image` with underlying `UIImage` for iOS and `android.media.Image` for Android.   
 
 So, the idea is _to create multiple atomic and small controls for each platform and complex composite screens where we just specify what platform (type of contols) we would like to combine and on compile time we assemble absolutely polymorphic view_. The composite screen might look like this:
 
