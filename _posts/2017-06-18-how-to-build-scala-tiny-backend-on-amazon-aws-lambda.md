@@ -1,7 +1,8 @@
 ---
-published: true
-title: How to build Scala tiny backend on Amazon AWS Lambda
 layout: post
+title: How to build Scala tiny backend on Amazon AWS Lambda
+
+published: true
 tags: [scala, aws, lambda, dynamodb, scala]
 categories: [scala-aws-lambda]
 ---
