@@ -23,7 +23,7 @@ object ContentControl extends Poly1 {
 
 In this code I use shapeless `Poly1` to make polymorphism for my platform and depending on case (the only implemented part here is `SemanticUiWebDom`, which is [Semantic UI](https://semantic-ui.com/) web platform, rendered to DOM directly) decides which component it can render and return it respectively. 
 
-So, the idea is _to create multiple atomic and small controls for each platform and complex composite screens where we just specify what type of contols we would like to combine and on compile time we assemble absolutely polymorphic view_. The composite screen might look like this:
+So, the idea is _to create multiple atomic and small controls for each platform and complex composite screens where we just specify what platform (type of contols) we would like to combine and on compile time we assemble absolutely polymorphic view_. The composite screen might look like this:
 
 ```scala
 import japgolly.scalajs.react.ScalaComponent
@@ -53,6 +53,20 @@ object ItemComponent extends Poly1 {
   private lazy val webComponent = component[SemanticUiWebDom]
 
   implicit def caseWeb: Case.Aux[SemanticUiWebDom, ComponentModel => VdomElement] = at[SemanticUiWebDom](web => props => webComponent((web, props)))
+}
+```
+
+And platform cases are just simple traits:
+
+```scala
+object Platform {
+
+  sealed trait SemanticUiWebDom
+
+  sealed trait IOSMobileNative
+
+  sealed trait AndroidMobileNative
+
 }
 ```
 
