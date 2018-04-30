@@ -6,7 +6,7 @@ bigimg: /img/4D226A28-8A60-4005-9AF4-20BEF039DF30.jpg
 ---
 In the modern age of micro-services it's vitally important to have good health-checks. It's never considered as a hard task. There are few approaches around. Somebody just do a simple ping-pong (just return static pre-defined response on a given endpoint), somebody enables heavy and powerful frameworks with embedded health-check abilities.
 
-I asked myself, can we implement strong and powerful health-check which allows us to monitor all backing services (like Postgres, Kafka, Akka, etc) without bringing a lot of complex dependencies into the module and without having huge fragmentation of all sub-modules. Here I will try to keep functional approach and have universal but powerful health-check library. For simplicity reasons, I will use `circe` as a json library and `http4s` as http server. But it's just matter of taste. I would also like to keep ability to integrate my health-checks into other http-servers (for example, in `akka-http`).
+I asked myself, can we implement strong and powerful health-check which allows us to monitor all backing services (like Postgres, Kafka, Akka, etc) without bringing a lot of complex dependencies into the module and without having huge fragmentation of all sub-modules. Here I will try to keep functional approach and have universal but powerful health-check library. For simplicity reasons, I will use `circe` as a json library and `http4s` as http server. But it's just a matter of taste. I would also like to keep ability to integrate my health-checks into other http-servers (for example, in `akka-http`).
 
 ## Model
 
@@ -287,6 +287,92 @@ val route: Route = handleExceptions(ApiExceptionHandler.handle)(concat(
   otherRoute,
   healthCheckRoute
 ))
+```
+
+## Example of json output
+
+In happy path our health-check can return following json:
+
+```json
+{
+  "statuses": [
+    {
+      "name": "App",
+      "status": {
+        "Ok": {}
+      },
+      "metadata": {}
+    },
+    {
+      "name": "ActorSystem",
+      "status": {
+        "Ok": {}
+      },
+      "metadata": {
+        "akka.actor.ActorSystem.Version": "2.5.11",
+        "akka.http.Version.current": "10.1.1"
+      }
+    },
+    {
+      "name": "PostgresDatabase",
+      "status": {
+        "Ok": {}
+      },
+      "metadata": {}
+    },
+    {
+      "name": "KafkaProducer",
+      "status": {
+        "Ok": {}
+      },
+      "metadata": {}
+    }
+  ]
+}
+```
+
+In the case of failure, our health-check will return ServiceUnavailable status and will be the following:
+
+```json
+{
+  "statuses": [
+    {
+      "name": "App",
+      "status": {
+        "Ok": {}
+      },
+      "metadata": {}
+    },
+    {
+      "name": "ActorSystem",
+      "status": {
+        "Ok": {}
+      },
+      "metadata": {
+        "akka.actor.ActorSystem.Version": "2.5.11",
+        "akka.http.Version.current": "10.1.1"
+      }
+    },
+    {
+      "name": "PostgresDatabase",
+      "status": {
+        "Failure": {
+          "error": "db.default.db - Connection is not available, request timed out after 1004ms."
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "name": "KafkaProducer",
+      "status": {
+        "Failure": {
+          "error": "Expiring 1 record(s) for health-check-0: 2034 ms has passed since batch creation plus linger time"
+        }
+      },
+      "metadata": {}
+    }
+  ]
+}
 ```
 
 ## Code snippet
