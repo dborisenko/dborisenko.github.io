@@ -30,7 +30,11 @@ object HealthCheckStatus {
 I need another one model class for abstracting of the check itself. Let's call this component `HealthCheckElement`
 
 ```scala
-final case class HealthCheckElement[F[_]](name: String, status: F[HealthCheckStatus], metadata: Map[String, String])
+final case class HealthCheckElement[F[_]](
+  name: String, 
+  status: F[HealthCheckStatus], 
+  metadata: Map[String, String]
+)
 ```
 
 Pay attention, that I use type constructor `F[_]` here. I would like to keep my check as generic as possible. So, it will represent 2 possible checks:
@@ -41,9 +45,13 @@ Pay attention, that I use type constructor `F[_]` here. I would like to keep my 
 And the list of all possible checks I will hold in the following structure:
 
 ```scala
-final case class HealthCheck[F[_]](statuses: NonEmptyVector[HealthCheckElement[F]]) {
+final case class HealthCheck[F[_]](
+  statuses: NonEmptyVector[HealthCheckElement[F]]
+) {
+
   def withCheck(name: String, check: F[HealthCheckStatus], metadata: Map[String, String] = Map.empty): HealthCheck[F] =
     HealthCheck(statuses.append(HealthCheckElement(name, check, metadata)))
+
 }
 ```
 
