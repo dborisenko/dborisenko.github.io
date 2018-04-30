@@ -215,4 +215,72 @@ implicit class ProducerOps[Key, Value](val producer: Producer[Key, Value]) exten
 
 ## Http4s Health Check Server
 
+Here is implementation of my health-check service. It's simple, returning `Ok` if everything is fine and `ServiceUnavailable` if something goes wrong.
+
+```scala
+import cats.effect.Effect
+import cats.implicits._
+import io.circe.syntax._
+import org.http4s.HttpService
+import org.http4s.circe._
+import org.http4s.dsl.Http4sDsl
+
+import scala.language.higherKinds
+
+class HealthCheckService[F[_]: Effect](check: () => HealthCheck[F]) extends Http4sDsl[F] {
+
+  val service: HttpService[F] = HttpService[F] {
+    case GET -> Root / "healthcheck" => check().fold(v => Ok(v.asJson), v => ServiceUnavailable(v.asJson)).flatten
+  }
+}
+```
+
+And here is default `http4s` implementation of server application.
+
+```scala
+import cats.effect.Effect
+import fs2.StreamApp
+import org.http4s.HttpService
+import org.http4s.server.blaze.BlazeBuilder
+
+import scala.concurrent.ExecutionContext
+import scala.language.higherKinds
+
+abstract class HealthCheckServer[F[_]: Effect](
+  port: Int = 8080,
+  host: String = "0.0.0.0",
+  check: () => HealthCheck[F]
+)(implicit ec: ExecutionContext) extends StreamApp[F] {
+  def stream(args: List[String], requestShutdown: F[Unit]): fs2.Stream[F, StreamApp.ExitCode] =
+    new HealthCheckStream(port, host, check).stream
+
+  def run(): Unit = main(Array.empty)
+}
+
+class HealthCheckStream[F[_]: Effect](port: Int, host: String, check: () => HealthCheck[F]) {
+
+  private val healthCheckService: HttpService[F] = new HealthCheckService[F](check).service
+
+  def stream(implicit ec: ExecutionContext): fs2.Stream[F, StreamApp.ExitCode] = BlazeBuilder[F]
+    .bindHttp(port, host).mountService(healthCheckService, "/").serve
+}
+```
+
 ## Akka Http Health Check Server
+
+Another option is that we can integrate healthcheck into our existed akka-http application.
+
+```scala
+val healthCheckRoute: Route = (get & path("healthcheck")) { ctx =>
+  healthCheck().fold(v => complete(v), v => complete((ServiceUnavailable, v))).unsafeToFuture().flatMap(_(ctx))
+}
+// ...
+val route: Route = handleExceptions(ApiExceptionHandler.handle)(concat(
+  otherRoute,
+  healthCheckRoute
+))
+```
+
+## Code snippet
+
+In this example I tried to explain my thoughts about making zero-dependencies generic health-check library which is simple composable and runable everywhere. The full example of health-check can be found in the following [github snippet](https://gist.github.com/dborisenko/85078d3b91c365da6af98ba2c1395107) 
