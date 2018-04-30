@@ -164,7 +164,7 @@ implicit class HealthCheckIOOps(val hc: HealthCheck[IO]) extends AnyVal {
 }
 ```
 
-## Kafka special case
+## Health-check example
 
 Here we can see some ready-to use helper methods for Postgres, Kafka or Akka health-checks. And that is how we are going to use them in the application code:
 
@@ -178,6 +178,8 @@ val healthCheck: HealthCheck[IO] = HealthCheck
   .withKafkaProducerCheck(healthCheckProducer.send(_, _, _).map(m => m.hasOffset && m.hasTimestamp))  // Kafka Producer health-check is just sending heart-bit message to health-check topic
   .withCheck("CustomCheck", IO(isApplicationRunning).map(HealthCheckStatus(_, "Application is not running")))  // We can also add some custom check.
 ```
+
+## Kafka special case
 
 Here I use Kafka Producer health-check. It needs to have some special configuration. We don't want to wait long time to be able to say, is our Kafka connection working fine or not. So, our Kafka Producer configuration will look like:
 ```scala
