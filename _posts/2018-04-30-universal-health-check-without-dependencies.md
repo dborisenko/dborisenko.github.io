@@ -2,7 +2,7 @@
 layout: post
 title: Universal health-check without dependencies
 tags: [cats-effects, health-check]
-bigimg: /img/4D226A28-8A60-4005-9AF4-20BEF039DF30.jpg
+bigimg: /img/4d226a28-8a60-4005-9af4-20bef039df30.jpg
 ---
 In the modern age of micro-services it's vitally important to have good health-checks. It's never considered as a hard task. There are few approaches around. Somebody just do a simple ping-pong (just return static pre-defined response on a given endpoint), somebody enables heavy and powerful frameworks with embedded health-check abilities.
 
