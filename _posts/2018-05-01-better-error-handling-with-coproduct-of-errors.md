@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Better error handling with Coproduct of errors
-tags: [error, shapeless, exception]
+tags: [error, shapeless, exception, coproduct]
 bigimg: /img/5232336e-d2b2-4e74-b4e4-405bae1d615e.jpg
 ---
 Scala is a very reach platform. It gives you many ways to solve the same problem. Even such fundamental and basic problem as error handling. In this post I am going to describe an approach, that is becoming more common to use. It allows you to know your concrete errors, gives you flexibility to combine them and manage your effect that could potentially contain an error.
