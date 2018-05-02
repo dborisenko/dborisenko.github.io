@@ -62,7 +62,50 @@ As you can see, there are a lot of possible approaches. All of them are valid in
 
 # Know your errors
 
-But what if we have multiple errors? It's quite common in modern development to have a function which can go wrong in a multiple different ways. Let's say, your process can fail even to start due to `ConfigNotFoundError` or can raise an error during the processing. There are also few possible combinations. 
+But what if we have multiple errors? It's quite common in modern development to have a function which can go wrong in a multiple different ways. Let's say, your process can fail even to start due to `ConfigNotFoundError` or can raise an error during the processing. 
 
-The most direct and straight way is just to encode your error result as `Throwable`. That is how it's done in the most cases: `Future`, `Try` or even `IO` from cats (I'm not talking about `EitherT[IO, E, T]` or `IO[Either[E, T]]` — it's a bit different way). The disadvantage of this approach is that you actually don't know what error happen in compilation time. You have to wait in runtime and try to handle all possible errors with some default scenarios if something really unpredicted happened.
+There are also few possible combinations. The most direct and straight way is just to encode your error result as `Throwable`. That is how it's done in the most cases: `Future`, `Try` or even `IO` from cats (I'm not talking about `EitherT[IO, E, T]` or `IO[Either[E, T]]` — it's a bit different way). The disadvantage of this approach is that you actually know nothing about your error in the compilation time. You have to wait in runtime and try to handle _all possible errors_ with some default scenarios if something really unexpected has happened.
 
+Another option will be to encode your error into your types. You can always return `Either[IllegalArgumentException, R]` or `IO[Either[IllegalArgumentException, R]]` or even `EitherT[IO, IllegalArgumentException, T]`. Obviously, in this case you have concrete type of your error. You know what can go wrong — you know that you have to deal with error of concrete type IllegalArgumentException. So, you know which errors you must handle.
+
+But what should you do if you have multiple types of this error? You still can build sealed trait hierarchies:
+
+```scala
+sealed trait Error
+final case class ConfigKeyNotFoundError(key: String) extends Error
+case object NumberMustBe42Error extends Error
+final case class IllegalArgumentError(cause: IllegalArgumentException) extends Error
+final case class NoSuchElementError(cause: NoSuchElementException) extends Error
+final case class OtherError(message: String) extends Error
+```
+
+This way allows you to have quite good and readable result of your process:
+
+```scala
+def subprocessFromModule1(): Either[NoSuchElementException, Int] = Left(new NoSuchElementException)
+
+def subprocessFromModule2(): Either[IllegalArgumentException, Int] = Left(new IllegalArgumentException)
+
+import cats.syntax.either._
+def process(): Either[Error, Int] = for {
+  result1 <- subprocessFromModule1().leftMap(NoSuchElementError(_))
+  result2 <- subprocessFromModule2().leftMap(IllegalArgumentError(_))
+} yield result1 + result2
+``` 
+
+The disadvantage of this approach is that you have to wrap all your errors, which might happen inside of your process. If you have multiple sub-processes from different modules which return different types of errors — all of them must be wrapped.
+
+If you don't want to wrap them then your signature can be very ugly and unmaintainable:
+
+```scala
+def process(): Either[Either[IllegalArgumentException, NoSuchElementException], Int] = for {
+  result1 <- subprocessFromModule1().leftMap[Either[IllegalArgumentException, NoSuchElementException]](Right(_))
+  result2 <- subprocessFromModule2().leftMap[Either[IllegalArgumentException, NoSuchElementException]](Left(_))
+} yield result1 + result2
+```
+
+The type signature here is already a bit over-complicated. And if we have 3 errors it can be `Either[Either[Either[IllegalArgumentException, NumberFormatException], NoSuchElementException], Int]`, etc. You of course can play with type definitions and try to hide it. But you always have to assemble them at some point. So, your code for 3 errors will be `???.leftMap[Either[Either[IllegalArgumentException, NumberFormatException], NoSuchElementException]](v => Right(Left(_)))`. Does not look so nice, right?
+
+But are there any other ways? Yes, there are!
+
+# Coproduct type of errors
