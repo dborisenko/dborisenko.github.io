@@ -3,6 +3,8 @@ layout: post
 title: Universal health-check without dependencies
 tags: [cats-effects, health-check]
 bigimg: /img/4d226a28-8a60-4005-9af4-20bef039df30.jpg
+gh-repo: dborisenko/universal-health-check
+gh-badge: [star, fork, follow]
 ---
 In the modern age of micro-services it's vitally important to have good health-checks. It's never considered as a hard task. There are few approaches around. Somebody just do a simple ping-pong (just return static pre-defined response on a given endpoint), somebody enables heavy and powerful frameworks with embedded health-check abilities.
 
@@ -377,6 +379,6 @@ In the case of failure, our health-check will return ServiceUnavailable status a
 }
 ```
 
-## Code snippet
+## Code example
 
-In this example I tried to explain my thoughts about making zero-dependencies generic health-check library which is simple composable and runable everywhere. The full example of health-check can be found in the following [github snippet](https://gist.github.com/dborisenko/85078d3b91c365da6af98ba2c1395107) 
+In this example I tried to explain my thoughts about making zero-dependencies generic health-check library which is simple composable and runable everywhere. The full example of health-check can be found in the following [github](https://github.com/dborisenko/universal-health-check) 
