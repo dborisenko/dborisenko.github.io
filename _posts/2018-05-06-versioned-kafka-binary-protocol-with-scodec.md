@@ -9,15 +9,15 @@ gh-badge: [star, fork, follow]
 
 # Kafka binary protocol mess
 
-Immutable data set is nature of Kafka. That is major architectural concept affected all design decisions. And one of the complex problem is to keep message compatibility with old legacy messages after migration to the newest message format. There are multiple serialization and deserialization libraries attempting to solve this complex problem (and none of them is really solving it):
+Immutable data set is nature of Kafka. That is major architectural concept affected all design decisions. And one of the complex problems is to keep message compatibility with old legacy messages after migration to the newest message format. There are multiple serialization and deserialization libraries attempting to solve this complex problem (and none of them is really solving it):
 
-- You can start your journey to Kafka Serialization zoo with [Apache Avro](https://avro.apache.org/). This is library written on Java. The main conceptual idea of it is to separate read scheme and write scheme. Every time when you save message with given avro write schema you need to have this schema in the special registry. When you change your format you can use new write schema. And when your applications reads message from Kafka topic, it loads write schema of that concrete message and the latest read schema. The main challenge here is to keep compatibility between all versions of write schemas and the read schema. I have experience, where all that zoo of schemas became quite hard to maintain due to huge amount of data migrations. Avro does not support versioning from the box. Surprisingly, it somehow became de-facto standard of Kafka message serialization system.
+- You can start your journey to Kafka Serialization zoo with [Apache Avro](https://avro.apache.org/). This is library written in Java. The main conceptual idea of it is to separate read scheme and write scheme. Every time when you save the message with given Avro write schema you need to have this schema in the special registry. When you change your format you can use new write schema. And when your applications read a message from Kafka topic, it loads write schema of that concrete message and the latest read schema. The main challenge here is to keep compatibility between all versions of write schemas and the read schema. I have experience, where all that zoo of schemas became quite hard to maintain due to a huge amount of data migrations. Avro does not support versioning from the box. Surprisingly, it somehow became the de-facto standard of Kafka message serialization system.
 
-- Another libraries which you will probably try to play with are [Google Protocol Buffers](https://developers.google.com/protocol-buffers/) and [Apache Thrift](https://thrift.apache.org/). That libraries do not have immutable schema (like Avro write schemas). The main idea of that libraries is to append schema every time when you need to change format. You still need to be able to process the old messages, because you don't remove old data type descriptors. The only requirement can be to have all data fields optional. As soon as they are optional you can easily stop writing to old data fields and read and migrate in the new data structure. The main disadvantage of that approach is that you actually spoil your message format with old invalid data fields in the same time with valid data fields. And after checking message format it's hard to see what is actual up to dated message format.
+- Other libraries which you will probably try to play with are [Google Protocol Buffers](https://developers.google.com/protocol-buffers/) and [Apache Thrift](https://thrift.apache.org/). That libraries do not have an immutable schema (like Avro write schemas). The main idea of that libraries is to append schema every time when you need to change the format. You still need to be able to process the old messages, because you don't remove old data type descriptors. The only requirement can be to have all data fields optional. As soon as they are optional you can easily stop writing to old data fields and read and migrate in the new data structure. The main disadvantage of that approach is that you actually spoil your message format with old invalid data fields at the same time with valid data fields. And after checking message format it's hard to see what is actually up to dated message format.
 
-- It's also common to use different Json libraries. Disadvantage of that approach can be similar to that disadvantages described in the previous section. This approach can depend on the implementation details of your underlying library and it's ability to handle absence or nullable fields.
+- It's also common to use different JSON libraries. The disadvantage of that approach can be similar to that disadvantages described in the previous section. This approach can depend on the implementation details of your underlying library and it's ability to handle absence or nullable fields.
 
-This domain is quite complex. The common practice is to have tolerant consumer who is able to read all message in all possible versions. Apart from the serialization issues you might face to the issues of different message schemas on the consumer and producer side (you will probably define deployment order to fix that) and other issues.
+This domain is quite complex. The common practice is to have a tolerant consumer who is able to read all message in all possible versions. Apart from the serialization issues, you might face to the issues of different message schemas on the consumer and producer side (you will probably define deployment order to fix that) and other issues.
 
 # The Scala way
 
@@ -49,9 +49,9 @@ val userCodecV1: Codec[User] = (utf8_32 :: optional(bool, utf8_32) :: bool).xmap
 )
 ```
 
-We started thinking about future evolution of data structure in advance. We did not want to involve any complex evolution scenarious or any schema generations. We just want to keep our codec as much as possible in code. And we can start using a [versioned codec wrapper](https://github.com/dborisenko/kafka-versioned-scodec/blob/676ac520525c54f57f784d4a85c44ef7ca303e14/src/main/scala/com/dbrsn/versioned/VersionedCodec.scala) which allows us to do a simple versioning of all our possible formats. The example of code can be found [here](https://github.com/dborisenko/kafka-versioned-scodec/blob/676ac520525c54f57f784d4a85c44ef7ca303e14/src/test/scala/com/dbrsn/versioned/VersionedCodecSpec.scala).
+We started thinking about the future evolution of data structure in advance. We did not want to involve any complex evolution scenarios or any schema generations. We just want to keep our codec as much as possible in code. And we can start using a [versioned codec wrapper](https://github.com/dborisenko/kafka-versioned-scodec/blob/676ac520525c54f57f784d4a85c44ef7ca303e14/src/main/scala/com/dbrsn/versioned/VersionedCodec.scala) which allows us to do a simple versioning of all our possible formats. The example of code can be found [here](https://github.com/dborisenko/kafka-versioned-scodec/blob/676ac520525c54f57f784d4a85c44ef7ca303e14/src/test/scala/com/dbrsn/versioned/VersionedCodecSpec.scala).
 
-After some time we might come to the idea that we need to add additional field to this data type. Let's say, we want to store total number of posts. Our data type might become:
+After some time we might come to the idea that we need to add an additional field to this data type. Let's say, we want to store the total number of posts. Our data type might become:
 
 ```scala
 /**
@@ -81,7 +81,7 @@ val userCodecV2: Codec[User] = (utf8_32 :: optional(bool, utf8_32) :: bool :: in
 )
 ```
 
-It's easy to see that here in one-liner we provide new version of codec with the newest field included and in another one-liner we provide the migration schema for building new data type from the old stored binary. It is pretty easy, isn't it? And let's bundlem both of that versions together:
+It's easy to see that here in one-liner we provide the new version of the codec with the newest field included and in another one-liner we provide the migration schema for building new data type from the old stored binary. It is pretty easy, isn't it? And let's bundle both of that versions together:
 
 ```scala
 import com.dbrsn.versioned.VersionedCodec
