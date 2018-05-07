@@ -21,7 +21,7 @@ This domain is quite complex. The common practice is to have tolerant consumer w
 
 # The Scala way
 
-As always, Scala (more precisely, Typelevel stack) can help us to simplify this huge mess in traditionally concise, generic and clean way. Typelevel stack contains pretty old but still nice library [scodec](https://github.com/scodec/scodec). Scodec is scodec is a combinator library for working with binary data. It focuses on contract-first and pure functional encoding and decoding of binary data and provides integration into shapeless. It does not support versioning from the box and it's really pretty simple. But it's simplicity is the main advantage. Together with composability.
+As always, Scala (more precisely, Typelevel stack) can help us to simplify this huge mess in traditionally concise, generic and clean way. Typelevel stack contains pretty old but still nice library [scodec](https://github.com/scodec/scodec). Scodec is a combinator library for working with binary data. It focuses on contract-first and pure functional encoding and decoding of binary data and provides integration into shapeless. It does not support versioning from the box and it's really pretty simple. But it's simplicity is the main advantage. Together with composability.
 
 Let's start with the example of usage. Let's define simple data structure `User` (of version v1):
 
