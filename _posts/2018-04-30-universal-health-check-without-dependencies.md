@@ -6,9 +6,9 @@ bigimg: /img/4d226a28-8a60-4005-9af4-20bef039df30.jpg
 gh-repo: dborisenko/universal-health-check
 gh-badge: [star, fork, follow]
 ---
-In the modern age of micro-services it's vitally important to have good health-checks. It's never considered as a hard task. There are few approaches around. Somebody just do a simple ping-pong (just return static pre-defined response on a given endpoint), somebody enables heavy and powerful frameworks with embedded health-check abilities.
+In the modern age of micro-services, it's vitally important to have good health-checks. It's never considered as a hard task. There are few approaches around. Somebody just does a simple ping-pong (just return the static pre-defined response on a given endpoint), somebody enables heavy and powerful frameworks with embedded health-check abilities.
 
-I asked myself, can we implement strong and powerful health-check which allows us to monitor all backing services (like Postgres, Kafka, Akka, etc) without bringing a lot of complex dependencies into the module and without having huge fragmentation of all sub-modules. Here I will try to keep functional approach and have universal but powerful health-check library. For simplicity reasons, I will use `circe` as a json library and `http4s` as http server. But it's just a matter of taste. I would also like to keep ability to integrate my health-checks into other http-servers (for example, in `akka-http`).
+I asked myself, can we implement strong and powerful health-check which allows us to monitor all backing services (like Postgres, Kafka, Akka, etc) without bringing a lot of complex dependencies into the module and without having huge fragmentation of all sub-modules. Here I will try to keep functional approach and have universal but powerful health-check library. For simplicity reasons, I will use `circe` as a JSON library and `http4s` as HTTP server. But it's just a matter of taste. I would also like to keep the ability to integrate my health-checks into other HTTP servers (for example, in `akka-http`).
 
 ## Model
 
@@ -124,7 +124,7 @@ implicit class HealthCheckIdOps(val hc: HealthCheck[Id]) extends AnyVal {
 }
 ```
 
-We of course, need to define our `circe` encoders. But we only need to define them for already evaluated types based on `Id`:
+We, of course, need to define our `circe` encoders. But we only need to define them for already evaluated types based on `Id`:
 
 ```scala
 import cats.Id
@@ -137,7 +137,7 @@ implicit lazy val encodeHealthCheck: Encoder[HealthCheck[Id]] = deriveEncoder
 
 ## Backing services checks
 
-And now you can ask, how this library can be universal without implementing any particular checks for Kafka, Postgres or anything else. Well, our main aim was to avoid any dependencies into the common health-check module itself. But we still hold that dependencies in that application modules, which uses that backing components. To integrate them we can easily use non-abstract methods as parameters of universal health-check library. Here can be few examples:
+And now you can ask, how this library can be universal without implementing any particular checks for Kafka, Postgres or anything else. Well, our main aim was to avoid any dependencies into the common health-check module itself. But we still hold that dependencies in those application modules, which uses those backing components. To integrate them we can easily use non-abstract methods as parameters of the universal health-check library. There can be few examples:
 
 ```scala
 implicit class HealthCheckIOOps(val hc: HealthCheck[IO]) extends AnyVal {
@@ -168,7 +168,7 @@ implicit class HealthCheckIOOps(val hc: HealthCheck[IO]) extends AnyVal {
 
 ## Health-check example
 
-Here we can see some ready-to use helper methods for Postgres, Kafka or Akka health-checks. And that is how we are going to use them in the application code:
+Here we can see some ready-to-use helper methods for Postgres, Kafka or Akka health-checks. And that is how we are going to use them in the application code:
 
 ```scala
 val config: Config = ConfigFactory.load()
@@ -183,7 +183,7 @@ val healthCheck: HealthCheck[IO] = HealthCheck
 
 ## Kafka special case
 
-Here I use Kafka Producer health-check. It needs to have some special configuration. We don't want to wait long time to be able to say, is our Kafka connection working fine or not. So, our Kafka Producer configuration will look like:
+Here I use Kafka Producer health-check. It needs to have some special configuration. We don't want to wait a long time to be able to say, is our Kafka connection working fine or not. So, our Kafka Producer configuration will look like:
 ```scala
 val configMap: Map[String, AnyRef] = Map(
   ProducerConfig.BOOTSTRAP_SERVERS_CONFIG -> "...",
@@ -227,7 +227,7 @@ implicit class ProducerOps[Key, Value](val producer: Producer[Key, Value]) exten
 
 ## Http4s Health Check Server
 
-Here is implementation of my health-check service. It's simple, returning `Ok` if everything is fine and `ServiceUnavailable` if something goes wrong.
+Here is the implementation of my health-check service. It's simple, returning `Ok` if everything is fine and `ServiceUnavailable` if something goes wrong.
 
 ```scala
 import cats.effect.Effect
@@ -247,7 +247,7 @@ class HealthCheckService[F[_]: Effect](check: () => HealthCheck[F]) extends Http
 }
 ```
 
-And here is default `http4s` implementation of server application.
+And here is default `http4s` implementation of the server application.
 
 ```scala
 import cats.effect.Effect
@@ -280,7 +280,7 @@ class HealthCheckStream[F[_]: Effect](port: Int, host: String, check: () => Heal
 
 ## Akka Http Health Check Server
 
-Another option is that we can integrate healthcheck into our existed akka-http application.
+Another option is that we can integrate health check into our existed akka-http application.
 
 ```scala
 val healthCheckRoute: Route = (get & path("healthcheck")) { ctx =>
@@ -293,9 +293,9 @@ val route: Route = handleExceptions(ApiExceptionHandler.handle)(concat(
 ))
 ```
 
-## Example of json output
+## Example of JSON output
 
-In happy path our health-check can return following json:
+In happy path our health-check can return following JSON:
 
 ```json
 {
@@ -381,4 +381,4 @@ In the case of failure, our health-check will return ServiceUnavailable status a
 
 ## Code example
 
-In this example I tried to explain my thoughts about making zero-dependencies generic health-check library which is simple composable and runable everywhere. The full example of health-check can be found in the following [github](https://github.com/dborisenko/universal-health-check) 
+In this example, I tried to explain my thoughts about making the zero-dependencies generic health-check library which is simple composable and runnable everywhere. The full example of health-check can be found in the following [github](https://github.com/dborisenko/universal-health-check) 
