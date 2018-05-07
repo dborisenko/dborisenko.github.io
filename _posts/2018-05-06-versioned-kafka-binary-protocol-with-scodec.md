@@ -81,7 +81,7 @@ val userCodecV2: Codec[User] = (utf8_32 :: optional(bool, utf8_32) :: bool :: in
 )
 ```
 
-It's easy to see that here in one-liner we provide new version of codec with the newest field included and in another one-liner we provide the migration schema for to build new data type from the old stored binary. It is pretty easy, isn't it? And let's bundlem both of that versions together:
+It's easy to see that here in one-liner we provide new version of codec with the newest field included and in another one-liner we provide the migration schema for building new data type from the old stored binary. It is pretty easy, isn't it? And let's bundlem both of that versions together:
 
 ```scala
 import com.dbrsn.versioned.VersionedCodec
