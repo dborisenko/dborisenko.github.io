@@ -4,9 +4,9 @@ title: Polymorphic Front-End on scalajs-react with shapeless
 tags: [scalajs-react, react-mobile, ios, web, android, shapeless]
 bigimg: /img/256bf2b0-eefc-476b-8041-1609997e124d.jpg
 ---
-Mobile development was historically quite splitted area. We have 2 separate markets of Android and iOS development (or 3? Is Windows Mobile still alive?). There were a lot of mobile frameworks, which were trying to follow the concept "write once — use everywhere" and minifying logical splitting of codebase into 2 (3? 4? 5?) different languages. And the recent attempt of [react-native](https://facebook.github.io/react-native/) seems to be quite successful. [React](https://reactjs.org/) platform with separation of runtimes into DOM and Native seems to be quite good approach.
+Mobile development was historically quite a split area. We do have 2 separate markets of Android and iOS development (or 3? Is Windows Mobile still alive?). There were a lot of mobile frameworks, which were trying to follow the concept "write once — use everywhere" and minifying logical splitting of codebase into 2 (3? 4? 5?) different languages. And the recent attempt of [react-native](https://facebook.github.io/react-native/) seems to be quite successful. [React](https://reactjs.org/) platform with separation of runtimes into DOM and Native seems to be quite a good approach.
 
-I tried to play with react and what I wanted to check is how easy to marry this framework with Scala. And I found great ScalaJs library [scalajs-react](https://gitter.im/japgolly/scalajs-react). Unfortunately, this library supports only rendering to DOM. And I started experimenting, how possible is to implement polymorphic code, which change it's morphism depending on the platform on compile time. In the end of this journey I would like to receive something like this:
+I tried to play with react and what I wanted to check is how easy to marry this framework with Scala. And I found great ScalaJs library [scalajs-react](https://gitter.im/japgolly/scalajs-react). Unfortunately, this library supports only rendering to DOM. And I started experimenting, how possible is to implement polymorphic code, which changes its morphism depending on the platform on compile time. At the end of this journey I would like to receive something like this:
 
 ```scala
 import japgolly.scalajs.react.ScalaComponent
@@ -22,9 +22,9 @@ object ContentControl extends Poly1 {
 }
 ```
 
-In this code I use shapeless `Poly1` to make polymorphism for my platform and depending on case decides which component it can render and return it respectively. In this exmaple we use `SemanticUiWebDom` as a platform definition, which is [Semantic UI](https://semantic-ui.com/) web platform, rendered to DOM directly. For this platform we can easily return HTML tags with type `VdomElement`. But for react-native it will be `Image` with underlying `UIImage` for iOS and `android.media.Image` for Android.   
+In this code, I use shapeless `Poly1` to make polymorphism for my platform and depending on case decides which component it can render and return it respectively. In this example, we use `SemanticUiWebDom` as a platform definition, which is [Semantic UI](https://semantic-ui.com/) web platform, rendered to DOM directly. For this platform, we can easily return HTML tags with type `VdomElement`. But for react-native, it will be `Image` with underlying `UIImage` for iOS and `android.media.Image` for Android.   
 
-So, the idea is _to create multiple atomic and small controls for each platform and complex composite screens where we just specify what platform (type of contols) we would like to combine and on compile time we assemble absolutely polymorphic view_. The composite screen might look like this:
+So, the idea is _to create multiple atomic and small controls for each platform and complex composite screens where we just specify what platform (a type of controls) we would like to combine and on compile time we assemble absolutely polymorphic view_. The composite screen might look like this:
 
 ```scala
 import japgolly.scalajs.react.ScalaComponent
@@ -71,4 +71,4 @@ object Platform {
 }
 ```
 
-I'm only starting playing around with the concepts, but during this experiment I would like to learn concepts of `react-native` and it's implications with Scala.
+I'm only starting playing around with the concepts, but during this experiment, I would like to learn concepts of `react-native` and it's implications with Scala.
