@@ -17,6 +17,21 @@ The code is based one the [storm-react-diagrams wrapper](https://github.com/dbor
 Add dependencies in `build.sbt`:
 
 ```scala
+libraryDependencies ++= Seq(
+  "com.dbrsn.scalajs.react.components" %%% "storm-react-diagrams" % "0.3.1"
+)
+npmDependencies in Compile ++= Seq(
+  "storm-react-diagrams" -> "5.2.1",
+  "react" -> "16.7.0",
+  "react-dom" -> "16.7.0"
+)
+```
+
+## Usage
+
+Example of usage:
+
+```scala
 // 1) setup the diagram engine
 val engine = new DiagramEngine()
 engine.installDefaultFactories()
@@ -44,17 +59,6 @@ model.addAll(node1, node2, link1)
 engine.setDiagramModel(model)
 
 DiagramWidget(diagramEngine = engine)()
-```
-
-## Usage
-
-Example of usage:
-
-```scala
-SuiButton(animated = true, onClick = (_: ReactMouseEventFromHtml) => Callback(???))(
-  SuiButtonContent(visible = true)("Hello, World!"),
-  SuiButtonContent(hidden = true)(SuiIcon(name = SuiIconType("arrow right"))())
-)
 ```
 
 Don't forget to add styles to your html:
