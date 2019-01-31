@@ -2,7 +2,6 @@
 layout: post
 title: Building Semantic-UI applications with scalajs-react
 tags: [semantic-ui, react, scalajs]
-bigimg: /img/???.jpg
 gh-repo: dborisenko/scalajs-react-components
 gh-badge: [star, fork, follow]
 ---

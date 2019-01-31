@@ -2,7 +2,6 @@
 layout: post
 title: Building Sortable lists with scalajs-react
 tags: [react-sortable-hoc, react, scalajs]
-bigimg: /img/???.jpg
 gh-repo: dborisenko/scalajs-react-components
 gh-badge: [star, fork, follow]
 ---
@@ -13,7 +12,7 @@ React Sortable (HOC) is a set of higher-order components to turn any list into a
 
 ## Dependencies
 
-The code is based one the [react-sortable-hoc](https://github.com/dborisenko/scalajs-react-components#react-sortable-hoc) for [React Sortable (HOC)](https://github.com/clauderic/react-sortable-hoc) component. It is written using [scalajs-react](https://github.com/japgolly/scalajs-react) library for ScalaJs.
+The code is based one the [react-sortable-hoc wrapper](https://github.com/dborisenko/scalajs-react-components#react-sortable-hoc) for [React Sortable (HOC)](https://github.com/clauderic/react-sortable-hoc) component. It is written using [scalajs-react](https://github.com/japgolly/scalajs-react) library for ScalaJs.
 
 Add dependencies in `build.sbt`:
 
