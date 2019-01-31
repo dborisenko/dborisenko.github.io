@@ -6,8 +6,6 @@ gh-repo: dborisenko/scalajs-react-components
 gh-badge: [star, fork, follow]
 ---
 
-# Semantic UI React
-
 Semantic is a UI framework designed for theming. It is possible to build nice and beautiful UI using Scala language. Here I will provide short instructions how to do that.
 
 ## Dependencies

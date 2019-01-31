@@ -6,8 +6,6 @@ gh-repo: dborisenko/scalajs-react-components
 gh-badge: [star, fork, follow]
 ---
 
-# STORM React Diagrams
-
 STORM React Diagrams is a super simple, no-nonsense diagramming library written in React that just works. It is possible to use it in Scala. Here I will provide short instructions how to do that.
 
 ## Dependencies

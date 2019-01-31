@@ -6,8 +6,6 @@ gh-repo: dborisenko/scalajs-react-components
 gh-badge: [star, fork, follow]
 ---
 
-# React Sortable (HOC)
-
 React Sortable (HOC) is a set of higher-order components to turn any list into an animated, touch-friendly, sortable list. It is possible to use it with Scala. Here I will provide short instructions how to do that.
 
 ## Dependencies

@@ -6,8 +6,6 @@ gh-repo: dborisenko/scalajs-react-components
 gh-badge: [star, fork, follow]
 ---
 
-# React Syntax Highlighter
-
 React Syntax Highlighter is a syntax highlighting component for react with prismjs or highlightjs ast using inline styles. It is possible to use it in Scala. Here I will provide short instructions how to do that.
 
 ## Dependencies
