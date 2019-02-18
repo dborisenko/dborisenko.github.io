@@ -28,16 +28,14 @@ From the [grammar specification](https://github.com/Microsoft/TypeScript/blob/f3
 | [InterfaceDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#71-interface-declarations)                   | `interface` BindingIdentifier TypeParameters<sub>opt</sub> InterfaceExtendsClause<sub>opt</sub> ObjectType    |
 | [TypeAliasDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#310-type-aliases)                            | `type` BindingIdentifier TypeParameters<sub>opt</sub> `=` Type `;`                                            |
 | [NamespaceDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#101-namespace-declarations)                  | `namespace` IdentifierPath `{` NamespaceBody `}`                                                              |
-| [AmbientVariableDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1211-ambient-variable-declarations)    | `declare` (`var` \| `let` \| `const`) AmbientBindingList `;`                                                    |
+| [AmbientVariableDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1211-ambient-variable-declarations)    | `declare` (`var` \| `let` \| `const`) AmbientBindingList `;`                                                  |
 | [AmbientFunctionDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1212-ambient-function-declarations)    | `declare` `function` BindingIdentifier CallSignature `;`                                                      |
 | [AmbientClassDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1213-ambient-class-declarations)          | `declare` `class` BindingIdentifier TypeParameters<sub>opt</sub> ClassHeritage `{` AmbientClassBody `}`       |
 | [AmbientEnumDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1214-ambient-enum-declarations)            | `declare` `const`<sub>opt</sub> `enum` BindingIdentifier `{` EnumBody<sub>opt</sub> `}`                       |
-| AmbientNamespaceDeclaration       |  
-| ImportAliasDeclaration            |
-| AmbientModuleDeclaration          |
-| DeclarationElement                |
-| ImportDeclaration                 |
-| ImportAliasDeclaration            |
+| [AmbientNamespaceDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1215-ambient-namespace-declarations)  | `declare` `namespace` IdentifierPath `{` AmbientNamespaceBody `}`                                             |
+| [ImportAliasDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#103-import-alias-declarations)             | `import` BindingIdentifier `=` EntityName `;`                                                                 |
+| [AmbientModuleDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#122-ambient-module-declarations)         | `declare` `module` StringLiteral `{`  DeclarationModule `}`                                                   |
+| [ImportDeclaration](http://www.ecma-international.org/ecma-262/6.0/#sec-imports)                                                                                      | `import` ImportClause FromClause `;`<br>`import` ModuleSpecifier `;`                                          |
 | ExportDeclarationElement          |
 | ExportDefaultDeclarationElement   |
 | ExportListDeclaration             |
