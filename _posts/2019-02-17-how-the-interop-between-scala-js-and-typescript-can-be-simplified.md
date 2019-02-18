@@ -23,9 +23,25 @@ First of all, let's check conceptually, is it possible to implement TypeScript l
 
 From the (grammar specification)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#a9-scripts-and-modules] we can derive our table.
 
-| Name in TypeScript    | Description                                                           | TypeScript example                                        |
-|-----------------------|-----------------------------------------------------------------------|-----------------------------------------------------------|
-| InterfaceDeclaration  | An interface declaration declares an interface type.                  | `interface MoverShaker extends Mover, Shaker { ... }`     |
+| Grammar name                                                                                                                                                          | Definition                                                                                                    |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| (InterfaceDeclaration)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#71-interface-declarations]                   | `interface` BindingIdentifier TypeParameters<sub>opt</sub> InterfaceExtendsClause<sub>opt</sub> ObjectType    |
+| (TypeAliasDeclaration)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#310-type-aliases]                            | `type` BindingIdentifier TypeParameters<sub>opt</sub> `=` Type `;`                                            |
+| (NamespaceDeclaration)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#101-namespace-declarations]                  | `namespace` IdentifierPath `{` NamespaceBody `}`                                                              |
+| (AmbientVariableDeclaration)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1211-ambient-variable-declarations]    | `declare` (`var` | `let` | `const`) AmbientBindingList `;`                                                    |
+| (AmbientFunctionDeclaration)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1212-ambient-function-declarations]    | `declare` `function` BindingIdentifier CallSignature `;`                                                      |
+| (AmbientClassDeclaration)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1213-ambient-class-declarations]          | `declare` `class` BindingIdentifier TypeParameters<sub>opt</sub> ClassHeritage `{` AmbientClassBody `}`       |
+| (AmbientEnumDeclaration)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1214-ambient-enum-declarations]            | `declare` `const`<sub>opt</sub> `enum` BindingIdentifier `{` EnumBody<sub>opt</sub> `}`                       |
+| AmbientNamespaceDeclaration       |  
+| ImportAliasDeclaration            |
+| AmbientModuleDeclaration          |
+| DeclarationElement                |
+| ImportDeclaration                 |
+| ImportAliasDeclaration            |
+| ExportDeclarationElement          |
+| ExportDefaultDeclarationElement   |
+| ExportListDeclaration             |
+| ExportAssignment                  |
 
 ## SemanticDB
 
