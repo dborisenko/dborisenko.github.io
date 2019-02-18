@@ -25,7 +25,11 @@ From the (grammar specification)[https://github.com/Microsoft/TypeScript/blob/f3
 
 | Name in TypeScript    | Description                                                           | TypeScript example                                        |
 |-----------------------|-----------------------------------------------------------------------|-----------------------------------------------------------|
-| InterfaceDeclaration  | An interface declaration declares an interface type.                  | `interface MoverShaker extends Mover, Shaker {`{:.typescript}<br>`  getStatus(): { speed: number; frequency: number; };`{:.typescript}<br>`}`{:.typescript}                                                                                           |
+| InterfaceDeclaration  | An interface declaration declares an interface type.                  | 
+<code>
+interface MoverShaker extends Mover, Shaker {
+  getStatus(): { speed: number; frequency: number; };
+</code>|
 
 ## SemanticDB
 
