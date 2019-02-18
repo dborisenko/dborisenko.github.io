@@ -19,11 +19,17 @@ The main idea is in making TypeScript 1st class citizen of Scala ecosystem. In s
 
 ## TypeScript compiler
 
-First of all, let's check conceptually, is it possible to implement TypeScript language constructions in terms of Scala language. After checking (TypeScript Language Specification)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md] we can build the table of TypeScript and compatible Scala language constructions. We are not going to write complete compiler of TypeScript to Scala.js. But instead we are going to focus only on (TypeScript declarations)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#23-declarations] (`d.ts` files or component definitions without implementations). That components are the most interesting for us and allow us to merge TypeScript ecosystem into Scala.js ecosystem.
+First of all, let's check conceptually, is it possible to implement TypeScript language constructions in terms of Scala language. After checking (TypeScript Language Specification)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md] we can build the table of TypeScript and compatible Scala language constructions. We are not going to write complete compiler of TypeScript to Scala.js. But instead we can focus only on (TypeScript declarations)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#23-declarations] (`d.ts` files or component definitions without implementations). That components are the most interesting for us and allow us to merge TypeScript ecosystem into Scala.js ecosystem. Even if component has an actual implementation, for purpose of this post we can ignore it and deal only with definitions.
 
-| Name in TypeScript   | Description | TypeScript example | Compatible in Scala.js | Scala.js example |
-|----------------------|-------------|--------------------|------------------------|------------------|
+From the (grammar specification)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#a9-scripts-and-modules] we can derive our table.
 
+| Name in TypeScript    | Description                                                           | TypeScript example                                        |
+|-----------------------|-----------------------------------------------------------------------|-----------------------------------------------------------|
+| InterfaceDeclaration  | An interface declaration declares an interface type.                  | `typescript`                                              |
+|                       |                                                                       | `interface MoverShaker extends Mover, Shaker {`           |
+|                       |                                                                       | `  getStatus(): { speed: number; frequency: number; };`   |
+|                       |                                                                       | `}`                                                       |
+```
 
 ## SemanticDB
 
