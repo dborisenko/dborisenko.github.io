@@ -23,12 +23,9 @@ First of all, let's check conceptually, is it possible to implement TypeScript l
 
 From the (grammar specification)[https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#a9-scripts-and-modules] we can derive our table.
 
-| Name in TypeScript    | Description                                                           | TypeScript example                                        |
-|-----------------------|-----------------------------------------------------------------------|-----------------------------------------------------------|
-| InterfaceDeclaration  | An interface declaration declares an interface type.                  | <code>
-interface MoverShaker extends Mover, Shaker {
-  getStatus(): { speed: number; frequency: number; };
-</code>|
+| Name in TypeScript    | Description                                                           | TypeScript example                                                                                    |
+|-----------------------|-----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| InterfaceDeclaration  | An interface declaration declares an interface type.                  | `interface MoverShaker extends Mover, Shaker { getStatus(): { speed: number; frequency: number; }; }` |
 
 ## SemanticDB
 
