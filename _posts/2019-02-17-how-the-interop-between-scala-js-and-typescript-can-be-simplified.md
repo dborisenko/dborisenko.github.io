@@ -40,7 +40,7 @@ From the [grammar specification](https://github.com/Microsoft/TypeScript/blob/f3
 | [ExportDeclarationElement](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#11341-export-modifiers)                      | `export` InterfaceDeclaration<br/>`export` TypeAliasDeclaration<br/>`export` AmbientDeclaration<br/>`export` ImportAliasDeclaration                                                                   |
 | [ExportDefaultDeclarationElement](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#11342-export-default-declarations)    | `export` `default` AmbientFunctionDeclaration<br/>`export` `default` AmbientClassDeclaration<br/>`export` `default` IdentifierReference `;`                                                           |
 | [ExportListDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#11343-export-list-declarations)                 | `export` `*` FromClause `;`<br/>`export` ExportClause FromClause `;`<br/>`export` ExportClause `;`                                                                                                    |
-| ExportAssignment                  |
+| [ExportAssignment](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1135-export-assignments)                             | `export` `=` IdentifierReference `;`                                                                                                                                                                  |
 
 ## SemanticDB
 
