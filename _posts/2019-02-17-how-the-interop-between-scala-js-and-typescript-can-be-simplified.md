@@ -47,6 +47,28 @@ And in the following table we can define some sub-elements of the previous gramm
 | [AmbientEnumDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1214-ambient-enum-declarations)            | `const`<sub>opt</sub> `enum` BindingIdentifier `{` EnumBody<sub>opt</sub> `}`                     |
 | [AmbientNamespaceDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1215-ambient-namespace-declarations)  | `namespace` IdentifierPath `{` AmbientNamespaceBody `}`                                           |
 
+## Scala.js Analogues
+
+We can easily see that all definitions in TypeScript are compatible with Scala.js. Even more, that is how Scala.js wrappers are actually created. Typical example of the wrapper can be found [here](https://github.com/dborisenko/scalajs-react-components/blob/9ca4f774114df75ffdfe7dac853be85011aec1d3/storm-react-diagrams/src/main/scala/com/dbrsn/scalajs/react/storm/diagrams/StormReactDiagrams.scala)
+
+```scala
+@js.native
+@JSImport("storm-react-diagrams", JSImport.Namespace)
+object StormReactDiagrams extends js.Object {
+  // ...
+  @js.native
+  class PointModel extends BaseModel {
+    def isConnectedToPort(): Boolean = js.native
+    def getLink(): LinkModel = js.native
+    def getX(): Double = js.native
+    def getY(): Double = js.native
+  }
+  // ...
+}
+```
+
+Which is quite similar to the real [TypeScript source code](https://github.com/projectstorm/react-diagrams/blob/5b142c1c6136eff75b81a819b4b73de644c307ab/src/models/PointModel.ts)
+
 ## SemanticDB
 
 ## SBT plugin
