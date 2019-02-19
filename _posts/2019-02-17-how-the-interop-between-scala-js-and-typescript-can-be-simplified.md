@@ -39,13 +39,13 @@ From the [grammar specification](https://github.com/Microsoft/TypeScript/blob/f3
 
 And in the following table we can define some sub-elements of the previous grammar.
 
-| [AmbientVariableDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1211-ambient-variable-declarations)        | `var` AmbientBindingList `;`<br/>`let` AmbientBindingList `;`<br/>`const` AmbientBindingList `;`                                                                                                      |
-| [AmbientFunctionDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1212-ambient-function-declarations)        | `function` BindingIdentifier CallSignature `;`                                                                                                                                                        |
-| [AmbientClassDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1213-ambient-class-declarations)              | `class` BindingIdentifier TypeParameters<sub>opt</sub> ClassHeritage `{` AmbientClassBody `}`                                                                                                         |
-| [AmbientEnumDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1214-ambient-enum-declarations)                | `const`<sub>opt</sub> `enum` BindingIdentifier `{` EnumBody<sub>opt</sub> `}`                                                                                                                         |
-| [AmbientNamespaceDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1215-ambient-namespace-declarations)      | `namespace` IdentifierPath `{` AmbientNamespaceBody `}`                                                                                                                                               |
-
-
+| Grammar name                                                                                                                                                          | Definition                                                                                        |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| [AmbientVariableDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1211-ambient-variable-declarations)    | `var` AmbientBindingList `;`<br/>`let` AmbientBindingList `;`<br/>`const` AmbientBindingList `;`  |
+| [AmbientFunctionDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1212-ambient-function-declarations)    | `function` BindingIdentifier CallSignature `;`                                                    |
+| [AmbientClassDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1213-ambient-class-declarations)          | `class` BindingIdentifier TypeParameters<sub>opt</sub> ClassHeritage `{` AmbientClassBody `}`     |
+| [AmbientEnumDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1214-ambient-enum-declarations)            | `const`<sub>opt</sub> `enum` BindingIdentifier `{` EnumBody<sub>opt</sub> `}`                     |
+| [AmbientNamespaceDeclaration](https://github.com/Microsoft/TypeScript/blob/f30e8a284ac479a96ac660c94084ce5170543cc4/doc/spec.md#1215-ambient-namespace-declarations)  | `namespace` IdentifierPath `{` AmbientNamespaceBody `}`                                           |
 
 ## SemanticDB
 
