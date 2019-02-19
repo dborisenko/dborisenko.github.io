@@ -67,8 +67,10 @@ object StormReactDiagrams extends js.Object {
 }
 ```
 
-Which is quite similar to the real [TypeScript source code](https://github.com/projectstorm/react-diagrams/blob/5b142c1c6136eff75b81a819b4b73de644c307ab/src/models/PointModel.ts)
+Which is quite similar to the real [TypeScript source code](https://github.com/projectstorm/react-diagrams/blob/5b142c1c6136eff75b81a819b4b73de644c307ab/src/models/PointModel.ts). So, the easiest approach is to (maybe even automatically) create wrapper for each `.ts` or `.d.ts` TypeScript source file.
 
 ## SemanticDB
+
+Can TypeScript source files be used inside Scala.js application without generating of such a huge amount of code? Maybe. 
 
 ## SBT plugin
