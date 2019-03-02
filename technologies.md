@@ -31,6 +31,12 @@ title: Technologies
 * Libraries for building user interfaces: [React](https://reactjs.org/)
 * React components: [Material-UI](https://material-ui.com/)
 
+### Legacy
+* [Java](https://www.java.com/): [Spring Framework](https://spring.io/projects/spring-framework), [Spring Security](https://spring.io/projects/spring-security), [Hibernate](https://hibernate.org/), [BlazeDS](https://sourceforge.net/adobe/blazeds/wiki/Home/), Swing
+* JavaScript: [AngularJS](https://angularjs.org/)
+* ActionScript: [Apache Flex](http://flex.apache.org/), [Adobe AIR](https://www.adobe.com/products/air.html)
+* C/C++: [Qt](https://www.qt.io/), [libFLAC](https://xiph.org/flac/)
+
 ## Backing services
 
 * Databases: [PostgreSQL](https://www.postgresql.org/), [Apache Cassandra](https://cassandra.apache.org/), [MongoDB](https://www.mongodb.com/)
