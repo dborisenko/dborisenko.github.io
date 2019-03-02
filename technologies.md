@@ -33,9 +33,9 @@ title: Technologies
 
 ### Legacy
 * [Java](https://www.java.com/): [Spring Framework](https://spring.io/projects/spring-framework), [Spring Security](https://spring.io/projects/spring-security), [Hibernate](https://hibernate.org/), [BlazeDS](https://sourceforge.net/adobe/blazeds/wiki/Home/), Swing
-* JavaScript: [AngularJS](https://angularjs.org/)
+* JavaScript: [AngularJS](https://angularjs.org/), [Phaser](https://phaser.io/)
 * ActionScript: [Apache Flex](http://flex.apache.org/), [Adobe AIR](https://www.adobe.com/products/air.html)
-* C/C++: [Qt](https://www.qt.io/), [libFLAC](https://xiph.org/flac/)
+* C/C++: [Qt](https://www.qt.io/), [libFLAC](https://xiph.org/flac/), [Chromium Embedded Framework](https://bitbucket.org/chromiumembedded/cef)
 
 ## Backing services
 
