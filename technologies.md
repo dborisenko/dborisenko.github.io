@@ -38,5 +38,9 @@ title: Technologies
 * Databases: [PostgreSQL](https://www.postgresql.org/), [Apache Cassandra](https://cassandra.apache.org/), [MongoDB](https://www.mongodb.com/)
 * Distributed streaming platforms: [Apache Kafka](https://kafka.apache.org/)
 
-* Cloud computing platforms: Amazon AWS, Google Cloud Platform
-* DevOps: Kubernetes, Ansible, Chef, Docker
+## Orchestration
+
+* Cloud computing platforms: [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/)
+* Container Orchestration: [Kubernetes](https://kubernetes.io/)
+* Automation of server configuration and management: [Ansible](https://www.ansible.com/), [Chef](https://www.chef.io/)
+* Containerization software: [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/)

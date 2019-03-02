@@ -71,6 +71,6 @@ Which is quite similar to the real [TypeScript source code](https://github.com/p
 
 ## SemanticDB
 
-Can TypeScript source files be used inside Scala.js application without generating of such a huge amount of code? Maybe. 
+Can TypeScript source files be used inside Scala.js application without generating of such a huge amount of wrappers boilerplate code? Maybe. 
 
 ## SBT plugin
