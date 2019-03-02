@@ -7,7 +7,7 @@ title: Technologies
 
 ## Development technologies by language
 
-* [Scala](https://www.scala-lang.org/)
+### [Scala](https://www.scala-lang.org/)
   * Platforms (Scala Backends): [JVM](https://www.scala-lang.org/), [Scala.js](https://www.scala-js.org/)
   * Functional programming libraries: [Cats](https://typelevel.org/cats/), [Scalaz](https://scalaz.github.io/)
   * Relational database libraries: [doobie](https://tpolecat.github.io/doobie/), [Slick](http://slick.lightbend.com/)
@@ -23,7 +23,7 @@ title: Technologies
   * Configuration libraries: [PureConfig](https://pureconfig.github.io/), [Ficus](https://github.com/iheartradio/ficus)
   * Enumeration implementation: [Enumeratum](https://github.com/lloydmeta/enumeratum)
 
-* [TypeScript](https://www.typescriptlang.org/)
+### [TypeScript](https://www.typescriptlang.org/)
   * Functional programming libraries: [fp-ts](https://gcanti.github.io/fp-ts/)
   * Data decoding/encoding: [io-ts](https://gcanti.github.io/io-ts/)
   * Newtypes libraries: [newtype-ts](https://github.com/gcanti/newtype-ts)
@@ -31,7 +31,7 @@ title: Technologies
   * Libraries for building user interfaces: [React](https://reactjs.org/)
   * React components: [Material-UI](https://material-ui.com/)
 
-* [Java](https://www.java.com/)
+### [Java](https://www.java.com/)
 
 ## Backing services
 
@@ -43,4 +43,4 @@ title: Technologies
 * Cloud computing platforms: [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/)
 * Container Orchestration: [Kubernetes](https://kubernetes.io/)
 * Automation of server configuration and management: [Ansible](https://www.ansible.com/), [Chef](https://www.chef.io/)
-* Containerization software: [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/)
+* Containerization: [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/)
