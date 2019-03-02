@@ -18,7 +18,7 @@ title: Technologies
 * Frameworks: [Play Framework](https://www.playframework.com/)
 * Distributed message-driven runtimes: [Akka](https://akka.io/), Akka Cluster
 * Streaming libraries: [fs2](https://fs2.io/), Akka Stream
-* JSON libraries: [circe](https://circe.github.io/circe/)
+* JSON libraries: [circe](https://circe.github.io/circe/), [Play JSON](https://github.com/playframework/play-json)
 * Testing toolkits: [Specs2](https://etorreborre.github.io/specs2/), [ScalaTest](http://www.scalatest.org/)
 * Configuration libraries: [PureConfig](https://pureconfig.github.io/), [Ficus](https://github.com/iheartradio/ficus)
 * Enumeration implementation: [Enumeratum](https://github.com/lloydmeta/enumeratum)
@@ -30,8 +30,6 @@ title: Technologies
 * Remote data ADTs: [remote-data-ts](https://github.com/devex-web-frontend/remote-data-ts)
 * Libraries for building user interfaces: [React](https://reactjs.org/)
 * React components: [Material-UI](https://material-ui.com/)
-
-### [Java](https://www.java.com/)
 
 ## Backing services
 
