@@ -48,8 +48,8 @@ title: Technologies
 * Containerization: [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/)
 
 # Tech Lead experience
-* Migration a monolith application to micro-service based applications
-* Mentoring the developers
+* Migration monolith applications to micro-service based applications
+* Mentoring developers
 * Design solution architecture and develop initial applications
 * Migration applications from bare metal setup to Kubernetes Cluster
 * Bringing typed functional programming patterns and abstractions to the team
