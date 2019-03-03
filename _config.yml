@@ -24,7 +24,7 @@ description: Keep cool и улыбайся!
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  My Expertise: "technologies"
+  My Expertise: "expertise"
   Resources:
     - GitHub: "https://github.com/dborisenko/"
     - LinkedIn: "https://www.linkedin.com/in/denisborisenko/"

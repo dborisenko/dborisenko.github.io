@@ -3,9 +3,9 @@ layout: page
 title: Technologies
 ---
 
-# Development and Engineering expertise (with production experience)
+# Engineering experience
 
-## Development technologies by language
+## Development
 
 ### [Scala](https://www.scala-lang.org/)
 * Platforms (Scala Backends): [JVM](https://www.scala-lang.org/), [Scala.js](https://www.scala-js.org/)
@@ -38,13 +38,23 @@ title: Technologies
 * C/C++: [Qt](https://www.qt.io/), [libFLAC](https://xiph.org/flac/), [Chromium Embedded Framework](https://bitbucket.org/chromiumembedded/cef)
 
 ## Backing services
-
 * Databases: [PostgreSQL](https://www.postgresql.org/), [Apache Cassandra](https://cassandra.apache.org/), [MongoDB](https://www.mongodb.com/)
 * Distributed streaming platforms: [Apache Kafka](https://kafka.apache.org/)
 
 ## Orchestration
-
 * Cloud computing platforms: [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/)
 * Container Orchestration: [Kubernetes](https://kubernetes.io/)
 * Automation of server configuration and management: [Ansible](https://www.ansible.com/), [Chef](https://www.chef.io/)
 * Containerization: [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/)
+
+# Tech Lead experience
+* Migration a monolith application to micro-service based applications
+* Mentoring the developers
+* Design solution architecture and develop initial applications
+* Migration applications from bare metal setup to Kubernetes Cluster
+* Bringing typed functional programming patterns and abstractions to the team
+
+# Team Lead experience
+* Establishing Scrum in a team
+* Work in a team as a Scrum Master
+* Establishing On-Call Duties in a team
