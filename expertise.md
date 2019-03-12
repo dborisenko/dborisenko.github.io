@@ -47,12 +47,16 @@ title: Technologies
 * Automation of server configuration and management: [Ansible](https://www.ansible.com/), [Chef](https://www.chef.io/)
 * Containerization: [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/)
 
+___
+
 # Tech Lead experience
 * Migration monolith applications to micro-service based applications
 * Mentoring developers
 * Design solution architecture and develop initial applications
 * Migration applications from bare metal setup to Kubernetes Cluster
 * Bringing typed functional programming patterns and abstractions to the team
+
+---
 
 # Team Lead experience
 * Establishing Scrum in a team
