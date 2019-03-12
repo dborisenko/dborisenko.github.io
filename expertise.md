@@ -5,7 +5,7 @@ title: Technologies
 
 # Engineering experience
 
-## Development
+## Languages and libraries
 
 ### [Scala](https://www.scala-lang.org/)
 * Platforms (Scala Backends): [JVM](https://www.scala-lang.org/), [Scala.js](https://www.scala-js.org/)
@@ -53,8 +53,6 @@ title: Technologies
 * Design solution architecture and develop initial applications
 * Migration applications from bare metal setup to Kubernetes Cluster
 * Bringing typed functional programming patterns and abstractions to the team
-
----
 
 # Team Lead experience
 * Establishing Scrum in a team
