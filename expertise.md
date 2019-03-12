@@ -54,6 +54,8 @@ title: Technologies
 * Migration applications from bare metal setup to Kubernetes Cluster
 * Bringing typed functional programming patterns and abstractions to the team
 
+---
+
 # Team Lead experience
 * Establishing Scrum in a team
 * Work in a team as a Scrum Master
