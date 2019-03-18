@@ -22,6 +22,7 @@ title: Technologies
 * Testing toolkits: [Specs2](https://etorreborre.github.io/specs2/), [ScalaTest](http://www.scalatest.org/)
 * Configuration libraries: [PureConfig](https://pureconfig.github.io/), [Ficus](https://github.com/iheartradio/ficus)
 * Enumeration implementation: [Enumeratum](https://github.com/lloydmeta/enumeratum)
+* Build tools: [sbt](https://www.scala-sbt.org/)
 
 ### [TypeScript](https://www.typescriptlang.org/)
 * Functional programming libraries: [fp-ts](https://gcanti.github.io/fp-ts/)
@@ -47,7 +48,7 @@ title: Technologies
 * Automation of server configuration and management: [Ansible](https://www.ansible.com/), [Chef](https://www.chef.io/)
 * Containerization: [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/)
 
-___
+---
 
 # Tech Lead experience
 * Migration monolith applications to micro-service based applications
