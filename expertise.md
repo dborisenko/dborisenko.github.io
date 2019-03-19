@@ -20,6 +20,7 @@ title: Technologies
 * Streaming libraries: [fs2](https://fs2.io/), Akka Stream
 * JSON libraries: [circe](https://circe.github.io/circe/), [Play JSON](https://github.com/playframework/play-json)
 * Testing toolkits: [Specs2](https://etorreborre.github.io/specs2/), [ScalaTest](http://www.scalatest.org/)
+* Load and performance testing frameworks: [Gatling](https://gatling.io/)
 * Configuration libraries: [PureConfig](https://pureconfig.github.io/), [Ficus](https://github.com/iheartradio/ficus)
 * Enumeration implementation: [Enumeratum](https://github.com/lloydmeta/enumeratum)
 * Build tools: [sbt](https://www.scala-sbt.org/)
