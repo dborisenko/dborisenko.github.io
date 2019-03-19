@@ -39,13 +39,9 @@ title: Technologies
 * ActionScript: [Apache Flex](http://flex.apache.org/), [Adobe AIR](https://www.adobe.com/products/air.html)
 * C/C++: [Qt](https://www.qt.io/), [libFLAC](https://xiph.org/flac/), [Chromium Embedded Framework](https://bitbucket.org/chromiumembedded/cef)
 
----
-
 ### Backing services
 * Databases: [PostgreSQL](https://www.postgresql.org/), [Apache Cassandra](https://cassandra.apache.org/), [MongoDB](https://www.mongodb.com/)
 * Distributed streaming platforms: [Apache Kafka](https://kafka.apache.org/)
-
----
 
 ### Orchestration
 * Cloud computing platforms: [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/)
