@@ -5,9 +5,9 @@ title: Technologies
 
 # Engineering experience
 
-## Languages and libraries
+### Languages and libraries
 
-### [Scala](https://www.scala-lang.org/)
+#### [Scala](https://www.scala-lang.org/)
 * Platforms (Scala Backends): [JVM](https://www.scala-lang.org/), [Scala.js](https://www.scala-js.org/)
 * Functional programming libraries: [Cats](https://typelevel.org/cats/), [Scalaz](https://scalaz.github.io/)
 * Relational database libraries: [doobie](https://tpolecat.github.io/doobie/), [Slick](http://slick.lightbend.com/)
@@ -25,7 +25,7 @@ title: Technologies
 * Enumeration implementation: [Enumeratum](https://github.com/lloydmeta/enumeratum)
 * Build tools: [sbt](https://www.scala-sbt.org/)
 
-### [TypeScript](https://www.typescriptlang.org/)
+#### [TypeScript](https://www.typescriptlang.org/)
 * Functional programming libraries: [fp-ts](https://gcanti.github.io/fp-ts/)
 * Data decoding/encoding: [io-ts](https://gcanti.github.io/io-ts/)
 * Newtypes libraries: [newtype-ts](https://github.com/gcanti/newtype-ts)
@@ -33,7 +33,7 @@ title: Technologies
 * Libraries for building user interfaces: [React](https://reactjs.org/)
 * React components: [Material-UI](https://material-ui.com/)
 
-### Legacy
+#### Legacy
 * [Java](https://www.java.com/): [Spring Framework](https://spring.io/projects/spring-framework), [Spring Security](https://spring.io/projects/spring-security), [Hibernate](https://hibernate.org/), [BlazeDS](https://sourceforge.net/adobe/blazeds/wiki/Home/), Swing
 * JavaScript: [AngularJS](https://angularjs.org/), [Phaser](https://phaser.io/)
 * ActionScript: [Apache Flex](http://flex.apache.org/), [Adobe AIR](https://www.adobe.com/products/air.html)
@@ -41,13 +41,13 @@ title: Technologies
 
 ---
 
-## Backing services
+### Backing services
 * Databases: [PostgreSQL](https://www.postgresql.org/), [Apache Cassandra](https://cassandra.apache.org/), [MongoDB](https://www.mongodb.com/)
 * Distributed streaming platforms: [Apache Kafka](https://kafka.apache.org/)
 
 ---
 
-## Orchestration
+### Orchestration
 * Cloud computing platforms: [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/)
 * Container Orchestration: [Kubernetes](https://kubernetes.io/)
 * Automation of server configuration and management: [Ansible](https://www.ansible.com/), [Chef](https://www.chef.io/)
