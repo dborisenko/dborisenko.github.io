@@ -24,6 +24,7 @@ title: Technologies
 * Configuration libraries: [PureConfig](https://pureconfig.github.io/), [Ficus](https://github.com/iheartradio/ficus)
 * Enumeration implementation: [Enumeratum](https://github.com/lloydmeta/enumeratum)
 * Build tools: [sbt](https://www.scala-sbt.org/)
+* Authentication/access libraries: [Silhouette](https://www.silhouette.rocks/), [JWT Scala](http://pauldijou.fr/jwt-scala/)
 
 #### [TypeScript](https://www.typescriptlang.org/)
 * Functional programming libraries: [fp-ts](https://gcanti.github.io/fp-ts/)
