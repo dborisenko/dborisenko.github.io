@@ -50,6 +50,10 @@ title: Technologies
 * Automation of server configuration and management: [Ansible](https://www.ansible.com/), [Chef](https://www.chef.io/)
 * Containerization: [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/)
 
+### Techniques and practices of designing
+* Type projections and dependent types in Scala 2
+* Recursion schemes and traversals for fixed point data structures
+
 ---
 
 # Tech Lead experience
