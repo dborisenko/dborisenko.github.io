@@ -3,6 +3,30 @@ layout: page
 title: Technologies
 ---
 
+# Tech Lead experience
+* Designing micro-service based architecture with taking into account CAP theorem, PACELC theorem and technical trade-offs
+* Initial development of micro-services using functional programming libraries and based on the principle of least power. Involving other team members to perform further development of the micro-services
+* Development and implementation of the strategy for the migration of monolithic applications into applications based on micro-services
+* Development and implementation of the strategy for the migration applications from bare metal setup to Kubernetes Cluster
+* Developer mentoring. Creating a development plan to help grow a developer with skills in static types, type safety and functional programming
+* Work on improving the understanding of statically typed functional concepts and abstractions in a team. Develop simple examples to bring the main ideas to the team
+
+---
+
+# Team Lead experience
+* Analysis and identification of problems in the workflow of a team
+* Implementing Scrum in a team. The changes can help achieve transparency of the process and predictability of results after a 2-week sprint. This can also have a positive effect on delivery time of products
+* Operating in a team as a Scrum Master
+* Establishing regular one-on-one meetings every 2 weeks with each team member to identify potential problems in the team, give feedback, motivate and convey the vision
+* Identification and removal of individual islands of isolated knowledge (when only one team member was able to maintain a certain piece of functionality). Removing such practices allowed the team members to be replaceable, and the whole team to be more flexible. As a side effect, the architecture of the individual components has improved
+* Establishing and moderating the necessary meetings for the technical discussion within the team (Technical Reviews and Architectural meetings)
+* Establishing On-Call duties in a team with appropriate compensation
+* Calibrate the performance of team members with an annual salary increase and bonuses
+* Replacing external consultants with internal engineers and solving problems using internal resources
+* Recruitment, Interviewing and Hiring
+
+---
+
 # Engineering experience
 
 ### Languages and libraries
@@ -58,27 +82,3 @@ title: Technologies
 ### Techniques and practices of designing
 * Type projections and dependent types in Scala 2
 * Recursion schemes and traversals for fixed point data structures
-
----
-
-# Tech Lead experience
-* Designing micro-service based architecture with taking into account CAP theorem, PACELC theorem and technical trade-offs
-* Initial development of micro-services using functional programming libraries and based on the principle of least power. Involving other team members to perform further development of the micro-services
-* Development and implementation of the strategy for the migration of monolithic applications into applications based on micro-services
-* Development and implementation of the strategy for the migration applications from bare metal setup to Kubernetes Cluster
-* Developer mentoring. Creating a development plan to help grow a developer with skills in static types, type safety and functional programming
-* Work on improving the understanding of statically typed functional concepts and abstractions in a team. Develop simple examples to bring the main ideas to the team
-
----
-
-# Team Lead experience
-* Analysis and identification of problems in the workflow of a team
-* Implementing Scrum in a team. The changes can help achieve transparency of the process and predictability of results after a 2-week sprint. This can also have a positive effect on delivery time of products
-* Operating in a team as a Scrum Master
-* Establishing regular one-on-one meetings every 2 weeks with each team member to identify potential problems in the team, give feedback, motivate and convey the vision
-* Identification and removal of individual islands of isolated knowledge (when only one team member was able to maintain a certain piece of functionality). Removing such practices allowed the team members to be replaceable, and the whole team to be more flexible. As a side effect, the architecture of the individual components has improved
-* Establishing and moderating the necessary meetings for the technical discussion within the team (Technical Reviews and Architectural meetings)
-* Establishing On-Call duties in a team with appropriate compensation
-* Calibrate the performance of team members with an annual salary increase and bonuses
-* Replacing external consultants with internal engineers and solving problems using internal resources
-* Recruitment, Interviewing and Hiring
