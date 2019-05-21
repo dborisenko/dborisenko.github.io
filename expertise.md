@@ -34,6 +34,10 @@ title: Technologies
 * Libraries for building user interfaces: [React](https://reactjs.org/)
 * React components: [Material-UI](https://material-ui.com/)
 
+#### [Kotlin](https://kotlinlang.org/)
+* Functional programming libraries: [Arrow](https://arrow-kt.io/)
+* Http server/client libraries: [http4k](https://www.http4k.org/)
+
 #### Legacy
 * [Java](https://www.java.com/): [Spring Framework](https://spring.io/projects/spring-framework), [Spring Security](https://spring.io/projects/spring-security), [Hibernate](https://hibernate.org/), [BlazeDS](https://sourceforge.net/adobe/blazeds/wiki/Home/), Swing
 * JavaScript: [AngularJS](https://angularjs.org/), [Phaser](https://phaser.io/)
@@ -43,6 +47,7 @@ title: Technologies
 ### Backing services
 * Databases: [PostgreSQL](https://www.postgresql.org/), [Apache Cassandra](https://cassandra.apache.org/), [MongoDB](https://www.mongodb.com/)
 * Distributed streaming platforms: [Apache Kafka](https://kafka.apache.org/)
+* Authorization servers: [Keycloak](https://www.keycloak.org/)
 
 ### Orchestration
 * Cloud computing platforms: [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/)
