@@ -43,6 +43,7 @@ title: Technologies
 * Distributed message-driven runtimes: [Akka](https://akka.io/), Akka Cluster
 * Streaming libraries: [fs2](https://fs2.io/), Akka Stream
 * JSON libraries: [circe](https://circe.github.io/circe/), [Play JSON](https://github.com/playframework/play-json)
+* Schema and serialization libraries: [avro4s](https://github.com/sksamuel/avro4s)
 * Testing toolkits: [Specs2](https://etorreborre.github.io/specs2/), [ScalaTest](http://www.scalatest.org/)
 * Load and performance testing frameworks: [Gatling](https://gatling.io/)
 * Configuration libraries: [PureConfig](https://pureconfig.github.io/), [Ficus](https://github.com/iheartradio/ficus)
@@ -68,10 +69,11 @@ title: Technologies
 * ActionScript: [Apache Flex](http://flex.apache.org/), [Adobe AIR](https://www.adobe.com/products/air.html)
 * C/C++: [Qt](https://www.qt.io/), [libFLAC](https://xiph.org/flac/), [Chromium Embedded Framework](https://bitbucket.org/chromiumembedded/cef)
 
-### Backing services
+### Backing services and systems
 * Databases: [PostgreSQL](https://www.postgresql.org/), [Apache Cassandra](https://cassandra.apache.org/), [MongoDB](https://www.mongodb.com/)
 * Distributed streaming platforms: [Apache Kafka](https://kafka.apache.org/)
 * Authorization servers: [Keycloak](https://www.keycloak.org/)
+* Serialization: [Apache Avro](https://avro.apache.org), [Protocol Buffers](https://developers.google.com/protocol-buffers)
 
 ### Orchestration
 * Cloud computing platforms: [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/)
