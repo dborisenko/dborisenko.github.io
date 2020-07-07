@@ -2,7 +2,7 @@
 layout: post
 title: Polymorphic Front-End on scalajs-react with shapeless
 tags: [scalajs-react, react-mobile, ios, web, android, shapeless]
-bigimg: /img/256bf2b0-eefc-476b-8041-1609997e124d.jpg
+bigimg: /assets/img/256bf2b0-eefc-476b-8041-1609997e124d.jpg
 ---
 Mobile development was historically quite a split area. We do have 2 separate markets of Android and iOS development (or 3? Is Windows Mobile still alive?). There were a lot of mobile frameworks, which were trying to follow the concept "write once — use everywhere" and minifying logical splitting of codebase into 2 (3? 4? 5?) different languages. And the recent attempt of [react-native](https://facebook.github.io/react-native/) seems to be quite successful. [React](https://reactjs.org/) platform with separation of runtimes into DOM and Native seems to be quite a good approach.
 

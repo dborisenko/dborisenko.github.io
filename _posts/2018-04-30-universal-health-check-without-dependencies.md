@@ -2,7 +2,7 @@
 layout: post
 title: Universal health-check without dependencies
 tags: [cats-effects, health-check]
-bigimg: /img/4d226a28-8a60-4005-9af4-20bef039df30.jpg
+bigimg: /assets/img/4d226a28-8a60-4005-9af4-20bef039df30.jpg
 gh-repo: dborisenko/universal-health-check
 gh-badge: [star, fork, follow]
 ---

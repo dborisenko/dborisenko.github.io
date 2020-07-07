@@ -2,7 +2,7 @@
 layout: post
 title: Versioned Kafka binary protocol with Scodec
 tags: [kafka, scodec, message]
-bigimg: /img/8125592c-112a-403b-9bd9-8692a17a66cc.jpg
+bigimg: /assets/img/8125592c-112a-403b-9bd9-8692a17a66cc.jpg
 gh-repo: dborisenko/kafka-versioned-scodec
 gh-badge: [star, fork, follow]
 ---
