@@ -63,7 +63,7 @@ title: Technologies
 * Functional programming libraries: [Arrow](https://arrow-kt.io/)
 * Http server/client libraries: [http4k](https://www.http4k.org/)
 
-#### Legacy
+#### Other
 * [Java](https://www.java.com/): [Spring Framework](https://spring.io/projects/spring-framework), [Spring Security](https://spring.io/projects/spring-security), [Hibernate](https://hibernate.org/), [BlazeDS](https://sourceforge.net/adobe/blazeds/wiki/Home/), Swing, [Apache Maven](https://maven.apache.org/)
 * JavaScript: [AngularJS](https://angularjs.org/), [Phaser](https://phaser.io/)
 * ActionScript: [Apache Flex](http://flex.apache.org/), [Adobe AIR](https://www.adobe.com/products/air.html)
